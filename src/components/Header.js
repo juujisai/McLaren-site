@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <header>
       <Hero>
-
       </Hero>
       <Navigation />
     </header>
