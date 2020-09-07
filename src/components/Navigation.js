@@ -5,7 +5,7 @@ import { FaArrowAltCircleRight as ArrowRight, FaArrowAltCircleLeft as ArrowLeft 
 
 const Navigation = () => {
 
-  const [hideNavi, setHideNavi] = React.useState(false)
+  const [hideNavi, setHideNavi] = React.useState(true)
 
   const handleClick = () => {
     hideNavi ? setHideNavi(false) : setHideNavi(true)
