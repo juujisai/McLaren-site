@@ -41,6 +41,9 @@ body {
   min-height: 300vh;
 }
 
+
+/* header */
+
 header {
   width: 100%;
   height: 100vh;
@@ -166,4 +169,16 @@ header .title {
 
 .menu.hide {
   opacity: 0;
+}
+
+/* end of header  */
+/* logo */
+.logo {
+  width: 100%;
+  height: 30vh;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
 }
