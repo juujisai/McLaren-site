@@ -11,6 +11,7 @@
   --mainLineHeight: 3;
   --mainOrange: rgb(253, 156, 1);
   --mainBlue: rgb(1, 111, 190);
+  --mainPadding: 20px;
 
   --naviMarginTop: 30px;
 
@@ -28,7 +29,12 @@
 
   --transformCenterObject: translate(-50%, -50%);
 
+  --signPadding: 0 20px;
 
+  --articleWidth: 90%;
+  --articleMargin: 20px auto;
+  --articlePadding: 40px 20px;
+  --articleBorderRadius: 5%;
 }
 
 
@@ -95,6 +101,7 @@ header .title {
   transition: var(--mainTransition);
   overflow: hidden;
   border-top: var(--borderWidth) solid var(--mainOrange);
+  z-index: 10;
 }
 
 .navi.hide {
@@ -205,7 +212,7 @@ header .title {
 .btn-link {
   margin: 25px 0;
   color: var(--mainOrange);
-  padding: 10px 20px;
+  padding: 10px var(--mainPadding);
   text-decoration: none;
   text-transform: uppercase;
 
@@ -215,3 +222,56 @@ header .title {
 }
 
 /* end of error page  */
+
+
+/* home page */
+
+.article {
+  position: relative;
+  width: var(--articleWidth);
+  margin: var(--articleMargin);
+  padding: var(--articlePadding);
+  border: 4px double var(--mainOrange);
+  border-radius: var(--articleBorderRadius);
+}
+
+.border-sign {
+  position: absolute;
+  top: -1%;
+  left: 10%;
+  padding: var(--signPadding);
+  background-color: #fff;
+  transform: translate(0, -50%);
+  color: var(--mainBlue);
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.article .title {
+  padding-bottom: var(--mainPadding);
+  color: var(--mainBlue)
+}
+
+.description {
+  padding-bottom: var(--mainPadding);
+
+}
+
+.link-cont {
+  overflow: hidden;
+
+}
+
+
+.btn-read-more {
+  margin-top: 10px;
+  background-color: var(--mainWhite);
+  border: none;
+  color: var(--mainOrange);
+  float: right;
+  /* margin-left: auto; */
+
+  text-decoration: none;
+}
+
+/* end of home page */

@@ -9,6 +9,8 @@ import Shop from './Shop'
 import Game from './Game'
 import Login from './Login'
 
+import ArticlePage from './ArticlePage'
+
 import ErrorPage from './ErrorPage'
 
 
@@ -26,6 +28,9 @@ const Page = () => {
   return (
     <Switch>
       {pages}
+      <Route path={`/article/:id`} >
+        <ArticlePage />
+      </Route>
       <ErrorPage />
     </Switch>
 

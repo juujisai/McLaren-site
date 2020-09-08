@@ -11,7 +11,7 @@ const Home = () => {
   const { loading, articles } = React.useContext(ArticleContext)
 
   const articlesList = [...articles].map(article => (
-    <article key={article.id}>
+    <article className='article' key={article.id}>
       <Article article={article} />
     </article>
   ))

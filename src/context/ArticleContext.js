@@ -13,8 +13,14 @@ const ArticleProvider = ({ children }) => {
 
   React.useEffect(() => {
     setLoading(true)
-    setArticles(articleData)
-    setLoading(false)
+
+    // just to test loading component
+
+    setTimeout(function () {
+      setArticles(articleData)
+      setLoading(false)
+    }, 1000)
+
   }, [])
 
   return (
