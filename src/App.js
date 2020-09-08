@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Logo from './components/Logo'
 import Page from './pages/Page'
 
+import Footer from './components/Footer'
+
 // import Logo from './components/Logo'
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
       <Header></Header>
       <Logo />
       <Page />
-
+      <Footer />
     </Router>
   );
 }
