@@ -12,13 +12,10 @@ import Login from './Login'
 import ErrorPage from './ErrorPage'
 
 
-
-const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />, <Login />]
-
-
-
-
 const Page = () => {
+
+  const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />, <Login />]
+
   const pages = navData.map((item, id) => (
     <Route path={item.path} key={id} exact>
       {pageFilesList[id]}

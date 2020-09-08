@@ -38,7 +38,7 @@
 
 
 body {
-  min-height: 300vh;
+  min-height: 200vh;
 }
 
 
@@ -94,7 +94,7 @@ header .title {
   width: 100%;
   transition: var(--mainTransition);
   overflow: hidden;
-
+  border-top: var(--borderWidth) solid var(--mainOrange);
 }
 
 .navi.hide {
@@ -178,7 +178,40 @@ header .title {
   height: 30vh;
 }
 
-.logo img {
+.logo img,
+.fullImg {
   width: 100%;
   height: 100%;
 }
+
+
+/* end of logo  */
+
+/* error page */
+
+.error-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-around;
+  justify-content: center;
+}
+
+.par {
+
+  margin: var(--btnIconMargin);
+  text-align: center;
+}
+
+.btn-link {
+  margin: 25px 0;
+  color: var(--mainOrange);
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border: var(--borderWidth) solid var(--mainOrange)
+    /* background-color: var(--mainWhite); */
+
+}
+
+/* end of error page  */
