@@ -29,6 +29,7 @@ const ArticlePage = () => {
     const paragraphs = fullText.map((p, id) => (<p key={id} className='single-article-par'>{p}</p>))
 
     const handleClick = () => {
+      console.log('click')
       setClicked(!clicked)
     }
 

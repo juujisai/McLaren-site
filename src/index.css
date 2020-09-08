@@ -330,7 +330,7 @@ header .title {
   background-color: var(--mainOrange);
 }
 
-/* .full-img.big {
+.full-img.big {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -338,7 +338,7 @@ header .title {
   width: auto;
   height: 100vh;
   z-index: 15;
-} */
+}
 
 /* end of single article styling  */
 
@@ -427,3 +427,47 @@ footer {
 }
 
 /* end of footer  */
+
+/* loader */
+.load {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-around;
+  justify-content: center;
+}
+
+.load p {
+  width: 100%;
+  text-align: center;
+}
+
+.loading-arrow {
+  /* margin: 0 auto; */
+
+  width: 30vh;
+  height: 30vh;
+}
+
+.loading-arrow svg {
+  /* margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform: rotate(0);
+  animation: arrowRotate 1s infinite linear;
+}
+
+@keyframes arrowRotate {
+  from {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+
+/* end of loader  */

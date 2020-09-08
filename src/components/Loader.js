@@ -1,7 +1,13 @@
 import React from 'react';
+
+import { GiArrowDunk as Arrow } from 'react-icons/gi'
+
 const Loader = () => {
   return (
-    <div>Loading ...</div>
+    <div className='load'>
+      <div className="loading-arrow"><Arrow /></div>
+      <p>Loading ...</p>
+    </div>
   );
 }
 
