@@ -35,15 +35,9 @@ const Hero = () => {
       exact
     />
   ))
-
-
   return (
     <>
-
-
-
       <Switch>
-
         {paths}
         <Route
           render={() => (<img src={navData[0].img} alt={navData[0].name}></img>)}
@@ -54,5 +48,4 @@ const Hero = () => {
 }
 
 export default Hero;
-
 

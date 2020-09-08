@@ -3,6 +3,7 @@ import navData from '../data/navData';
 import { NavLink } from 'react-router-dom'
 import { FaArrowAltCircleRight as ArrowRight, FaArrowAltCircleLeft as ArrowLeft } from 'react-icons/fa'
 
+
 const Navigation = () => {
 
   const [hideNavi, setHideNavi] = React.useState(true)
@@ -14,7 +15,7 @@ const Navigation = () => {
 
   const navi = navData.map((nav, id) => (
     <li key={id}>
-      <NavLink to={nav.path}>{nav.name}</NavLink>
+      <NavLink to={nav.path} exact>{nav.name}</NavLink>
     </li>
   ))
 

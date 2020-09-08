@@ -1,4 +1,4 @@
-import img1 from '../images/home1.jpg'
+import img1 from '../images/home12.jpg'
 import img2 from '../images/drivers.jpg'
 import img3 from '../images/schedule.jpg'
 import img4 from '../images/shop.jpg'
@@ -11,7 +11,7 @@ import img5 from '../images/game.jpg'
 
 export default [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     img: img1
   },

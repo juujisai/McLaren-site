@@ -9,7 +9,8 @@
   --mainBlack: #777;
   --mainWhite: #fff;
   --mainLineHeight: 3;
-
+  --mainOrange: rgb(253, 156, 1);
+  --mainBlue: rgb(1, 111, 190);
 
   --naviMarginTop: 30px;
 
@@ -85,9 +86,11 @@ header .title {
   bottom: 0;
   left: 0;
   padding-top: var(--naviMarginTop);
+  padding-bottom: var(--naviMarginTop);
   background-color: var(--mainWhite);
   width: 100%;
   transition: var(--mainTransition);
+  overflow: hidden;
 
 }
 
@@ -101,25 +104,44 @@ header .title {
 }
 
 .navi a {
+  position: relative;
   display: block;
   width: 100%;
-  color: var(--mainBlack);
+  color: var(--mainBlue);
   text-decoration: none;
   line-height: var(--mainLineHeight);
   text-align: center;
   text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
+
+
+.navi a::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -40%;
+  width: 10%;
+  height: 2px;
+  background-color: var(--mainOrange);
+  transition: var(--mainTransition);
+}
+
 
 .navi a.active {
-  color: red
+  color: var(--mainOrange)
 }
 
-
+.navi a.active::after {
+  left: 40%;
+}
 
 .btn-menu,
 .menu {
   position: absolute;
-  right: 5%;
+  right: 2vh;
   top: 2%;
   padding: var(--btnIconPadding);
   background-color: var(--mainWhite);
@@ -127,13 +149,15 @@ header .title {
   font-size: var(--btnIconFz);
   text-align: right;
   border: none;
+  color: var(--mainOrange);
+  z-index: 2;
 }
 
 
 .menu {
   position: fixed;
-  top: 5%;
-  right: 5%;
+  top: 2vh;
+  right: 2vh;
   background-color: transparent;
   z-index: 2;
   opacity: 1;

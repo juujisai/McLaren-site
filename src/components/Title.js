@@ -7,3 +7,6 @@ const Title = ({ text }) => {
 }
 
 export default Title;
+
+
+
