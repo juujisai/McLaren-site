@@ -1,8 +1,30 @@
 import React from 'react';
 
+import { ArticleContext } from '../context/ArticleContext'
+
+import Article from '../components/Article'
+import Loader from '../components/Loader'
+
+
 const Home = () => {
+
+  const { loading, articles } = React.useContext(ArticleContext)
+
+  const articlesList = [...articles].map(article => (
+    <article key={article.id}>
+      <Article article={article} />
+    </article>
+  ))
+
+  if (loading) {
+    return <Loader />
+  }
+
   return (
-    <div>Hello from Home Page</div>
+    <section className='section-article'>
+      {articlesList}
+    </section  >
+
   );
 }
 

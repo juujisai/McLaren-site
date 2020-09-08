@@ -6,7 +6,6 @@ import video from '../media/f1.webm'
 import videoCont from '../images/home1cont.png'
 
 const Hero = () => {
-  console.log(navData)
 
   const firstPath = (path) => {
     if (path.name === 'home') {
