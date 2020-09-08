@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom'
 import { ArticleContext } from '../context/ArticleContext'
 
 import Loader from '../components/Loader'
-import Title from '../components/Title'
 
 
 const ArticlePage = () => {
@@ -24,19 +23,23 @@ const ArticlePage = () => {
 
     const { title, description, fullText, img } = thisArticle
 
+    const paragraphs = fullText.map((p, id) => (<p key={id} className='single-article-par'>{p}</p>))
+
+
     return (
-      <>
-        <h3>{title}</h3>
+      <article className='single-article center-items'>
+        <h3 className='single-article-title'>{title}</h3>
         <div className="img-cont">
           <img className="full-img" src={img} alt="main article" />
+          <span className="from"><a href="https://twitter.com/McLarenF1/" target='_blank' rel="noopener noreferrer">from McLaren twitter account</a></span>
         </div>
-        <h4>{description}</h4>
-        <p>{fullText}</p>
+        <h4 className='single-article-desc'>{description}</h4>
+        {paragraphs}
 
         <Link to='/' className={'btn-link'}>Back to article list</Link>
 
 
-      </>
+      </article>
 
 
 

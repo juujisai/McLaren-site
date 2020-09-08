@@ -196,7 +196,8 @@ header .title {
 
 /* error page */
 
-.error-page {
+.error-page,
+.center-items {
   display: flex;
   flex-wrap: wrap;
   align-items: space-around;
@@ -275,3 +276,49 @@ header .title {
 }
 
 /* end of home page */
+
+/* single article styling  */
+
+.single-article-title,
+.single-article-par,
+.single-article-desc {
+  /* width: var(--articleWidth); */
+  padding: var(--mainPadding) 10px;
+}
+
+.single-article-title {
+  background-color: var(--mainBlue);
+  margin-bottom: 10px;
+  color: var(--mainWhite)
+}
+
+.img-cont {
+  overflow: hidden;
+}
+
+.from a {
+  margin-right: 10px;
+  float: right;
+  color: var(--mainBlue);
+  text-decoration: none;
+}
+
+.single-article-desc {
+  position: relative;
+}
+
+
+.single-article-desc::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: calc(0% + var(--mainPadding) / 2);
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--mainOrange);
+}
+
+
+
+/* end of single article styling  */
