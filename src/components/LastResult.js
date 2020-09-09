@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Loader from '../components/Loader'
 
 class LastResult extends React.Component {
 
@@ -9,15 +9,28 @@ class LastResult extends React.Component {
   }
 
   state = {
-
   }
 
+  componentDidMount() {
+    if (typeof this.result.result !== 'undefined') {
+      const { track, driver1, driver2 } = this.result.result
+
+      this.setState({
+        track, driver1, driver2
+      })
+    }
+  }
 
   render() {
 
-    // const {}
+    const drivers = [this.state.driver1, this.state.driver2]
 
-    console.log(this.result)
+
+
+    if (drivers[0] === undefined) {
+      return <Loader />
+    }
+
     return (
       <div>Hello from last result</div>
     );

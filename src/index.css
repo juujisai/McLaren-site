@@ -517,7 +517,8 @@ footer {
   margin-bottom: calc(var(--mainPadding) * 2);
 }
 
-.section-gallery .title {
+.section-gallery .title,
+.last-result .title {
   margin-bottom: var(--mainPadding);
   padding: var(--mainPadding);
   color: var(--mainWhite);

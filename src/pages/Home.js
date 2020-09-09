@@ -54,6 +54,8 @@ const Home = () => {
   return (
     <div>
       <section className='last-result'>
+        <Title text='Last result' />
+
         <LastResult result={result} />
       </section>
       <section className="section-gallery">
