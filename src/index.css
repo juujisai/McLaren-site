@@ -64,6 +64,27 @@ html {
 
 }
 
+
+.scroll-top {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  width: 40px;
+  height: 40px;
+  z-index: 13;
+  border: var(--borderWidth) solid var(--mainOrange);
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.scroll-top svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: var(--transformCenterObject) rotate(-45deg);
+  fill: var(--mainOrange);
+
+}
+
 /* header */
 
 header {

@@ -7,7 +7,6 @@ const Gallery = ({ gallery }) => {
 
   const handleClick = () => {
     setIsClicked(!isClicked)
-    console.log('click')
   }
 
   return (

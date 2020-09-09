@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 
 
 import ScrollToTop from './components/ScrollToTop'
+import ArrowToTop from './components/ArrowToTop'
 
 // import Logo from './components/Logo'
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router  >
       <ScrollToTop />
+      <ArrowToTop />
       <Header />
       <Logo />
       <Page />
