@@ -7,12 +7,16 @@ import Page from './pages/Page'
 
 import Footer from './components/Footer'
 
+
+import ScrollToTop from './components/ScrollToTop'
+
 // import Logo from './components/Logo'
 
 function App() {
   return (
-    <Router>
-      <Header></Header>
+    <Router  >
+      <ScrollToTop />
+      <Header />
       <Logo />
       <Page />
       <Footer />

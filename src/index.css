@@ -57,9 +57,12 @@
 body {
   /* min-height: 200vh; */
   font-family: var(--fontMain);
-
 }
 
+html {
+  scroll-behavior: smooth;
+
+}
 
 /* header */
 
