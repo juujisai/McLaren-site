@@ -21,10 +21,13 @@ const Home = () => {
   }
 
   return (
-    <section className='section-article'>
-      {articlesList}
-    </section  >
+    <div>
 
+      <section className='section-article'>
+        {articlesList}
+      </section  >
+
+    </div>
   );
 }
 
