@@ -4,11 +4,18 @@ import { ArticleContext } from '../context/ArticleContext'
 
 import { GalleryContext } from '../context/GalleryContext'
 
+import { ResultsContext } from '../context/ResultsContext'
+
+
 import Article from '../components/Article'
 import Loader from '../components/Loader'
 
 import Gallery from '../components/Gallery'
 import Title from '../components/Title'
+
+
+import LastResult from '../components/LastResult'
+
 const Home = () => {
 
 
@@ -32,12 +39,23 @@ const Home = () => {
 
   // end of gallery list
 
+  //last result 
+  const result = React.useContext(ResultsContext)
+
+
+  //end of last result
+
+
+
   if (loading || loading2) {
     return <Loader />
   }
 
   return (
     <div>
+      <section className='last-result'>
+        <LastResult result={result} />
+      </section>
       <section className="section-gallery">
         <Title text='Gallery' />
         {galleryList}
