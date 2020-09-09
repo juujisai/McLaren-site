@@ -57,6 +57,7 @@
 body {
   /* min-height: 200vh; */
   font-family: var(--fontMain);
+
 }
 
 
@@ -482,3 +483,59 @@ footer {
 
 
 /* end of loader  */
+
+
+
+
+/* gallery */
+.section-gallery {
+  width: 100%;
+  margin-bottom: calc(var(--mainPadding) * 2);
+}
+
+.section-gallery .title {
+  margin-bottom: var(--mainPadding);
+  padding: var(--mainPadding);
+  color: var(--mainWhite);
+  background-color: var(--mainBlue);
+}
+
+.gallery-picture {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  transition: var(--mainTransition);
+
+}
+
+
+
+.gallery-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: var(--transformCenterObject);
+  transition: var(--mainTransition);
+  width: 100%;
+}
+
+
+.zoom-gallery-pic {
+  height: 60vh;
+}
+
+.zoom-gallery-pic .hor {
+  height: 100%;
+  width: auto
+}
+
+
+.picture-desc {
+  position: absolute;
+  bottom: var(--mainPadding);
+  left: var(--mainPadding);
+  color: var(--mainWhite);
+}
+
+/* end of gallery */

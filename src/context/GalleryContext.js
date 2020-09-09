@@ -1,5 +1,5 @@
 import React from 'react';
-import galleryData from '../data/articleData'
+import galleryData from '../data/galleryData'
 
 export const GalleryContext = React.createContext();
 
@@ -9,7 +9,7 @@ export const GalleryContext = React.createContext();
 const GalleryProvider = ({ children }) => {
 
   const [gallery, setGallery] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
+  const [loading2, setLoading] = React.useState(false)
 
   React.useEffect(() => {
     setLoading(true)
@@ -28,7 +28,7 @@ const GalleryProvider = ({ children }) => {
     <GalleryContext.Provider
       value={{
         gallery,
-        loading
+        loading2
       }}
     >
       {children}
