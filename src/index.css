@@ -16,6 +16,12 @@
   --naviMarginTop: 30px;
 
 
+  --fontMcLaren: 'Josefin Sans', sans-serif;
+  --fontHeads: 'Ubuntu', sans-serif;
+  --fontMain: 'Oxygen', sans-serif;
+  --fontNav: 'Poppins', sans-serif;
+
+
   --borderWidth: 2px;
 
 
@@ -50,7 +56,7 @@
 
 body {
   /* min-height: 200vh; */
-  font-family: serif;
+  font-family: var(--fontMain);
 }
 
 
@@ -93,6 +99,7 @@ header .title {
   color: var(--mainWhite);
   text-align: center;
   text-transform: capitalize;
+  font-family: var(--fontHeads);
 }
 
 
@@ -130,6 +137,7 @@ header .title {
   text-transform: capitalize;
   letter-spacing: 2px;
   font-weight: 700;
+  font-family: var(--fontNav);
 }
 
 
@@ -253,11 +261,13 @@ header .title {
   color: var(--mainBlue);
   letter-spacing: 3px;
   font-weight: 700;
+  font-family: var(--fontMcLaren);
 }
 
 .article .title {
   padding-bottom: var(--mainPadding);
-  color: var(--mainBlue)
+  color: var(--mainBlue);
+  font-family: var(--fontHeads);
 }
 
 .description {
@@ -424,6 +434,7 @@ footer {
   text-align: center;
   padding-bottom: 5px;
   font-size: .8rem;
+  font-family: var(--fontMcLaren);
 }
 
 /* end of footer  */
