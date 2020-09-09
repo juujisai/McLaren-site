@@ -1,6 +1,8 @@
 import React from 'react';
 import Loader from '../components/Loader'
 
+import DriverResult from '../components/DriverResult'
+
 class LastResult extends React.Component {
 
   constructor(props) {
@@ -23,16 +25,21 @@ class LastResult extends React.Component {
 
   render() {
 
-    const drivers = [this.state.driver1, this.state.driver2]
+    const driversList = [this.state.driver1, this.state.driver2]
+
+    const drivers = driversList.map((driver, id) => (
+      <DriverResult data={driver} key={id} />
+    ))
 
 
-
-    if (drivers[0] === undefined) {
+    if (driversList[0] === undefined) {
       return <Loader />
     }
 
     return (
-      <div>Hello from last result</div>
+      <div className="result">
+        {drivers}
+      </div>
     );
   }
 }
