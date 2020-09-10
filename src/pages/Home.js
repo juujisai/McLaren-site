@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <div>
       <section className='last-result'>
-        <Title text='Last result' />
+        <Title text={`Last result at ${result.result.track}`} />
 
         <LastResult result={result} />
       </section>
