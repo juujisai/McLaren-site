@@ -21,6 +21,7 @@
   --fontMain: 'Oxygen', sans-serif;
   --fontNav: 'Poppins', sans-serif;
 
+  --fontTimeNumbers: 'Orbitron', sans-serif;
 
   --borderWidth: 2px;
 
@@ -45,7 +46,8 @@
 
   --partnersHeight: 15vh;
 
-
+  --driverAnimationDuration: 10s;
+  --driverStatAnimationDuration: 5s;
 }
 
 
@@ -580,3 +582,133 @@ footer {
 }
 
 /* end of gallery */
+
+/* last result*/
+
+.driver-result {
+  width: 100%;
+  height: 40vh;
+
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-between;
+  background-color: var(--mainOrange);
+}
+
+
+.driver-name {
+  padding-bottom: var(--mainPadding);
+  width: 100%;
+  color: var(--mainWhite);
+  font-size: 1.5rem;
+  font-family: var(--fontHeads);
+  text-align: center;
+}
+
+
+.driver-img-cont {
+  position: relative;
+  width: 45%;
+  overflow: hidden;
+
+}
+
+.driver-img-cont img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: var(--transformCenterObject);
+  height: 100%;
+}
+
+.result-data {
+  padding-top: var(--mainPadding);
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+.flex {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  background-color: #222;
+  color: var(--mainOrange);
+  border-left: var(--borderWidth) solid var(--mainWhite);
+  border-top: var(--borderWidth) solid var(--mainWhite);
+
+  overflow: hidden;
+}
+
+.place-cont,
+.time-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.place-cont div,
+.time-cont div {
+  width: 100%;
+  text-align: center;
+}
+
+
+.place-cont span,
+.time-cont span {
+  display: block;
+  padding-top: calc(var(--mainPadding) / 4);
+
+  color: var(--mainBlue);
+
+  font-family: var(--fontTimeNumbers);
+
+  font-weight: 700;
+}
+
+.place-cont {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: moveToTop var(--driverStatAnimationDuration) infinite linear;
+
+}
+
+
+.time-cont {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  animation: moveToTop var(--driverStatAnimationDuration) reverse infinite linear;
+  animation-delay: calc(var(--driverStatAnimationDuration) / 3);
+}
+
+
+@keyframes moveToTop {
+  0% {
+    transform: translateY(0)
+  }
+
+  35% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-100%)
+  }
+
+  85% {
+    transform: translateY(-100%)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+
+/* end of last result */
