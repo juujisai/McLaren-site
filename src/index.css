@@ -521,6 +521,8 @@ footer {
   margin-bottom: calc(var(--mainPadding) * 2);
 }
 
+/* main-title */
+
 .section-gallery .title,
 .last-result .title {
   margin-bottom: var(--mainPadding);
@@ -528,6 +530,8 @@ footer {
   color: var(--mainWhite);
   background-color: var(--mainBlue);
 }
+
+/* end of main-title */
 
 .gallery-picture {
   position: relative;
