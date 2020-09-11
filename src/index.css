@@ -804,6 +804,8 @@ footer {
 
 .driver-data-name {
   text-shadow: var(--mainTextShadow);
+  color: #333;
+
 
 }
 
