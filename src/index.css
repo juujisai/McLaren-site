@@ -263,6 +263,7 @@ header .title {
 }
 
 .btn-link {
+  display: inline-block;
   margin: 25px 0;
   color: var(--mainOrange);
   padding: 10px var(--mainPadding);
@@ -888,7 +889,6 @@ footer {
 }
 
 
-.image-img2 {}
 
 
 

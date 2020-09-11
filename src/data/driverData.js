@@ -1,10 +1,11 @@
 import lando1 from '../images/driver/lando1.jpg'
 import lando2 from '../images/driver/lando2.jpg'
 import landoGif from '../images/driver/lando_gif.gif'
-
+import landoPng from '../images/lando_cropp.png'
 import carlos1 from '../images/driver/carlos1.jpg'
 import carlos2 from '../images/driver/carlos2.jpg'
 import carlosGif from '../images/driver/carlos_gif.gif'
+import carlosPng from '../images/carlos_cropp.png'
 
 
 export default [
@@ -12,13 +13,13 @@ export default [
     name: 'lando',
     secondName: 'norris',
     image: [lando1, lando2],
+    imagePng: landoPng,
     number: '4',
     f1Debut: 'australia 2019',
     birth: '13 november 1999',
     homeCity: 'bristol / uk',
     video: landoGif,
     info: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum aut, beatae maxime architecto aliquid nulla doloremque ducimus deleniti expedita deserunt?`, `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas excepturi ipsam eum dolorum quod quae repellat nulla laudantium, voluptatem magnam praesentium deserunt aspernatur tempore molestias!`, `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, omnis?`, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum sed recusandae nulla amet, earum vitae voluptatem minima aliquid omnis impedit eaque hic ad nisi.`, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quae incidunt ad laboriosam eos, vitae commodi hic deserunt harum quis ducimus nesciunt quo qui sapiente.`],
-    twitter: `<a class="twitter-timeline" data-width="400" data-theme="light" href="https://twitter.com/LandoNorris?ref_src=twsrc%5Etfw">Tweets by LandoNorris</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`,
     socialMedia: [
       {
         name: 'website',
@@ -52,13 +53,13 @@ export default [
     name: 'carlos',
     secondName: 'sainz',
     image: [carlos1, carlos2],
+    imagePng: carlosPng,
     number: '55',
     f1Debut: 'australia 2015',
     birth: '1 september 1994',
     homeCity: 'madrid / spain',
     video: carlosGif,
     info: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum aut, beatae maxime architecto aliquid nulla doloremque ducimus deleniti expedita deserunt?`, `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas excepturi ipsam eum dolorum quod quae repellat nulla laudantium, voluptatem magnam praesentium deserunt aspernatur tempore molestias!`, `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, omnis?`, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eum sed recusandae nulla amet, earum vitae voluptatem minima aliquid omnis impedit eaque hic ad nisi.`, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quae incidunt ad laboriosam eos, vitae commodi hic deserunt harum quis ducimus nesciunt quo qui sapiente.`],
-    twitter: `<a class="twitter-timeline" data-width="400" href="https://twitter.com/Carlossainz55?ref_src=twsrc%5Etfw">Tweets by Carlossainz55</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`,
     socialMedia: [
       {
         name: 'website',
