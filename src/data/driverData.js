@@ -9,8 +9,8 @@ import carlosGif from '../images/driver/carlos_gif.gif'
 
 export default [
   {
-    name: 'Lando',
-    secondName: 'Norris',
+    name: 'lando',
+    secondName: 'norris',
     image: [lando1, lando2],
     number: '4',
     f1Debut: 'australia 2019',
@@ -49,8 +49,8 @@ export default [
   },
 
   {
-    name: 'Carlos',
-    secondName: 'Sainz',
+    name: 'carlos',
+    secondName: 'sainz',
     image: [carlos1, carlos2],
     number: '55',
     f1Debut: 'australia 2015',
