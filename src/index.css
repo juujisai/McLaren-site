@@ -888,8 +888,86 @@ footer {
   left: -70%
 }
 
-
-
-
-
 /* end of drivers short */
+
+/* start of driver page */
+.driver-page {
+  overflow: hidden;
+}
+
+
+.img-cont-driver {
+
+  height: 50vh;
+}
+
+.img-cont-driver .full-img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+}
+
+.name-full {
+  padding: var(--mainPadding) 0;
+  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+  text-align: center;
+}
+
+.about-driver {
+  margin: var(--mainPadding);
+}
+
+.about-driver p {
+  display: flex;
+  justify-content: space-between;
+  margin: calc(var(--mainPadding) / 2) 0;
+  text-transform: lowercase;
+}
+
+.about-driver span {
+  font-weight: 700;
+  color: var(--mainOrange)
+}
+
+
+.driver-socials {
+  position: relative;
+  height: 40vh;
+}
+
+.video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: brightness(.5);
+}
+
+
+.social-media {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: var(--transformCenterObject);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  font-size: 2em;
+}
+
+.social-media a {
+  color: var(--mainWhite);
+  text-decoration: none;
+}
+
+
+.info-page p {
+  margin: var(--mainPadding);
+}
+
+.link-back {
+  text-align: center;
+}
+
+/* end of driver page */

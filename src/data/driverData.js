@@ -8,6 +8,8 @@ import carlosGif from '../images/driver/carlos_gif.gif'
 import carlosPng from '../images/carlos_cropp.png'
 
 
+
+
 export default [
   {
     name: 'lando',
@@ -23,26 +25,32 @@ export default [
     socialMedia: [
       {
         name: 'website',
+        id: 0,
         path: 'https://landonorris.com/',
       },
       {
         name: 'facebook',
+        id: 1,
         path: 'https://www.facebook.com/landonorris1/',
       },
       {
         name: 'twitter',
+        id: 2,
         path: 'https://twitter.com/landonorris',
       },
       {
         name: 'instagram',
+        id: 3,
         path: 'https://www.instagram.com/landonorris/',
       },
       {
         name: 'youtube',
+        id: 4,
         path: 'https://www.youtube.com/landonorris04',
       },
       {
         name: 'twitch',
+        id: 5,
         path: 'https://www.twitch.tv/landonorris',
       },
     ],
@@ -63,18 +71,22 @@ export default [
     socialMedia: [
       {
         name: 'website',
+        id: 0,
         path: 'https://www.mclaren.com/racing/team/carlos-sainz/',
       },
       {
         name: 'twitter',
+        id: 2,
         path: 'https://twitter.com/Carlossainz55',
       },
       {
         name: 'instagram',
+        id: 3,
         path: 'https://www.instagram.com/carlossainz55/',
       },
       {
         name: 'youtube',
+        id: 4,
         path: 'https://www.youtube.com/carlossainz',
       },
     ],

@@ -5,6 +5,10 @@ import { DriverContext } from '../context/DriverContext'
 
 import Loader from '../components/Loader'
 
+import { FaFacebookF as Facebook, FaTwitter as Twitter, FaTwitch as Twitch, FaInstagram as Instagram, FaYoutube as Youtube, FaGlobeEurope as Website } from 'react-icons/fa'
+
+
+const socialIcons = [<Website />, <Facebook />, <Twitter />, <Instagram />, <Youtube />, <Twitch />]
 
 const DriverPage = () => {
 
@@ -54,7 +58,7 @@ const DriverPage = () => {
 
     const socials = socialMedia.map((social, id) => (
       <div key={id}>
-        {social.name}
+        <a href={social.path} target='_blank' rel='noopener noreferrer'>{socialIcons[social.id]}</a>
       </div>
     )
     )
@@ -64,19 +68,19 @@ const DriverPage = () => {
       <div className="driver-page">
 
         <div className="driver-full-info">
-          <div className="img-cont">
+          <div className="img-cont-driver">
             <img className={`full-img`} src={imagePng} alt={`${name} ${secondName}`} />
           </div>
 
-          <h2 className="name-full">{name} {secondName}</h2>
-          <h3>About</h3>
-          <p>Number: <span>{number}</span></p>
-          <p>Home City: <span>{homeCity}</span></p>
-          <p>Birth: <span>{birth}</span></p>
-          <p>F1 debut: <span>{f1Debut}</span></p>
-
+          <h2 className="name-full">{name} {secondName} #{number}</h2>
+          <div className="about-driver">
+            <h3>About</h3>
+            <p>Home City: <span>{homeCity}</span></p>
+            <p>Birth: <span>{birth}</span></p>
+            <p>F1 debut: <span>{f1Debut}</span></p>
+          </div>
         </div>
-        <div className="socials">
+        <div className="driver-socials">
           <div className="video">
             <img className='full-img' src={video} alt={`${name} ${secondName}`} />
           </div>
