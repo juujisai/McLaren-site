@@ -10,6 +10,7 @@ import Game from './Game'
 import Login from './Login'
 
 import ArticlePage from './ArticlePage'
+import DriverPage from './DriverPage'
 
 import ErrorPage from './ErrorPage'
 
@@ -30,6 +31,9 @@ const Page = () => {
       {pages}
       <Route path={`/article/:id`} >
         <ArticlePage />
+      </Route>
+      <Route path={`/drivers/:name`}>
+        <DriverPage />
       </Route>
       <ErrorPage />
     </Switch>
