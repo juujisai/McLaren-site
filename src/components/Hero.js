@@ -31,7 +31,7 @@ const Hero = () => {
           <Title text={path.name} />
         </>
       )}
-      exact
+      exact={id === 0 ? true : false}
     />
   ))
   return (
