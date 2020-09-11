@@ -28,6 +28,20 @@ const DriverPage = () => {
     let randomId1 = Math.floor(Math.random() * socialMedia.length) - 1
     let randomId2 = Math.floor(Math.random() * socialMedia.length) - 1
 
+    if (randomId1 <= 0) {
+      randomId1 = 0
+    }
+
+    if (randomId2 <= 0) {
+      randomId2 = 0
+    }
+
+
+    if (randomId1 === randomId2) {
+      randomId2 = Math.floor(Math.random() * socialMedia.length) - 1
+    }
+
+
     const paragraphs = info.map((par, id) => {
       return (
         <div key={id} className='text-cont-flex'>
@@ -62,21 +76,17 @@ const DriverPage = () => {
           <p>F1 debut: <span>{f1Debut}</span></p>
 
         </div>
-        <div className="video">
-          <img className='full-img' src={video} alt={`${name} ${secondName}`} />
+        <div className="socials">
+          <div className="video">
+            <img className='full-img' src={video} alt={`${name} ${secondName}`} />
+          </div>
+          <div className="social-media">
+            {socials}
+          </div>
         </div>
-
-        {/* <div className="photos">
-          <img src={image[0]} alt={`${name} ${secondName}`} className="full-img" />
-          <img src={image[1]} alt={`${name} ${secondName}`} className="full-img" />
-        </div> */}
 
         <div className="info-page">
           {paragraphs}
-        </div>
-
-        <div className="social-media">
-          {socials}
         </div>
 
         <div className='link-back'>
