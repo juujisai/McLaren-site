@@ -4,6 +4,8 @@ import { ScheduleContext } from '../context/ScheduleContext'
 
 import TrackInfoShort from '../components/TrackInfoShort'
 import Loader from '../components/Loader'
+import NextRace from '../components/NextRace'
+
 
 const Schedule = () => {
 
@@ -20,6 +22,9 @@ const Schedule = () => {
 
   return (
     <div className={'schedule'}>
+      <NextRace info={scheduleData} />
+
+
       {tracks}
 
     </div>
