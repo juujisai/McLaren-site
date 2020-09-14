@@ -3,11 +3,9 @@
 
 import gp1 from '../images/schedule/gp1.png'
 import gp1_1 from '../images/schedule/gp1_1.png'
-import gp1_photo from '../images/schedule/gp1_photo.jpg'
 
 import gp2 from '../images/schedule/gp2.png'
 import gp2_1 from '../images/schedule/gp2_1.png'
-import gp2_photo from '../images/schedule/gp2_photo.jpg'
 
 import gp3 from '../images/schedule/gp3.png'
 import gp3_1 from '../images/schedule/gp3_1.png'
@@ -92,7 +90,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Austria.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=pzvsD7PKgC8',
     video3d: 'https://www.youtube.com/watch?v=58f0LQrP8p4',
-    // photos: gp1_photo,
     circuitMonoColor: gp1_1,
     circuitColor: gp1,
     stats: [
@@ -148,7 +145,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Austria.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=pzvsD7PKgC8',
     video3d: 'https://www.youtube.com/watch?v=58f0LQrP8p4',
-    // photos: gp1_photo,
     circuitMonoColor: gp1_1,
     circuitColor: gp1,
     stats: [
@@ -204,7 +200,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Hungary.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=2ZY3k7dQk0o',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp2_1,
     circuitColor: gp2,
     stats: [
@@ -260,7 +255,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Great_Britain.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=lRW9GCXJhYQ',
     video3d: 'https://www.youtube.com/watch?v=DUxBWFUfmtg',
-    // photos: gp2_photo,
     circuitMonoColor: gp3_1,
     circuitColor: gp3,
     stats: [
@@ -316,7 +310,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Great_Britain.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=lRW9GCXJhYQ',
     video3d: 'https://www.youtube.com/watch?v=DUxBWFUfmtg',
-    // photos: gp2_photo,
     circuitMonoColor: gp3_1,
     circuitColor: gp3,
     stats: [
@@ -372,7 +365,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Spain.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=e5uArfwC4Zk',
     video3d: 'https://www.youtube.com/watch?v=WIhBSA7rnLo',
-    // photos: gp2_photo,
     circuitMonoColor: gp5_1,
     circuitColor: gp5,
     stats: [
@@ -428,7 +420,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Belgium.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=38ApwVmnR1A',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp6_1,
     circuitColor: gp6,
     stats: [
@@ -484,7 +475,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Italy.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=5cK9Z7yQTVo',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp7_1,
     circuitColor: gp7,
     stats: [
@@ -540,7 +530,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Tuscany.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=KNPdTDdHRnU',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp8_1,
     circuitColor: gp8,
     stats: [
@@ -596,7 +585,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Russia.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=q9LWr0lL3wc',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp9_1,
     circuitColor: gp9,
     stats: [
@@ -652,7 +640,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Germany.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=7YvOSwiR_V4',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp10_1,
     circuitColor: gp10,
     stats: [
@@ -708,7 +695,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Portugal.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=JBFPP_BG-qo',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp11_1,
     circuitColor: gp11,
     stats: [
@@ -764,7 +750,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/EmiliaRomagna.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=JBFPP_BG-qo',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp12_1,
     circuitColor: gp12,
     stats: [
@@ -820,7 +805,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Turkey.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=c7lFZD6pN2E',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp13_1,
     circuitColor: gp13,
     stats: [
@@ -876,7 +860,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Bahrain.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=uFGZ444l29M',
     video3d: 'https://www.youtube.com/watch?v=RbuuR1N8McY',
-    // photos: gp2_photo,
     circuitMonoColor: gp14_1,
     circuitColor: gp14,
     stats: [
@@ -932,7 +915,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/Sakhir.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=uFGZ444l29M',
     video3d: 'https://www.youtube.com/watch?v=RbuuR1N8McY',
-    // photos: gp2_photo,
     circuitMonoColor: gp15_1,
     circuitColor: gp15,
     stats: [
@@ -988,7 +970,6 @@ export default [
     linkToF1Page: 'https://www.formula1.com/en/racing/2020/United_Arab_Emirates.html',
     hotlapVideo: 'https://www.youtube.com/watch?v=u2tdIFp3How',
     video3d: 'no-video',
-    // photos: gp2_photo,
     circuitMonoColor: gp16_1,
     circuitColor: gp16,
     stats: [
