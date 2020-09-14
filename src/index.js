@@ -5,18 +5,20 @@ import ArticleProvider from './context/ArticleContext'
 import GalleryProvider from './context/GalleryContext'
 import ResultsProvider from './context/ResultsContext'
 import DriverProvider from './context/DriverContext'
-
+import ScheduleProvider from './context/ScheduleContext'
 
 ReactDOM.render(
-  <DriverProvider>
-    <ResultsProvider>
-      <GalleryProvider>
-        <ArticleProvider>
-          <App />
-        </ArticleProvider>
-      </GalleryProvider>
-    </ResultsProvider>
-  </DriverProvider>
+  <ScheduleProvider>
+    <DriverProvider>
+      <ResultsProvider>
+        <GalleryProvider>
+          <ArticleProvider>
+            <App />
+          </ArticleProvider>
+        </GalleryProvider>
+      </ResultsProvider>
+    </DriverProvider>
+  </ScheduleProvider>
   ,
   document.getElementById('root')
 );
