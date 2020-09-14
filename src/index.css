@@ -971,3 +971,110 @@ footer {
 }
 
 /* end of driver page */
+
+/* start of single race short */
+
+.single-race {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: var(--mainPadding);
+}
+
+.race-data {
+  padding: var(--mainPadding);
+  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.race-name,
+.race-date {
+  width: 100%;
+}
+
+.race-date {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.race-date p {
+  /* width: calc(100% / 3); */
+  margin-right: 5px
+}
+
+.race-date a {
+  display: block;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.race-date svg {
+  /* flex-grow: 1; */
+  animation: changeColor 1s infinite;
+}
+
+
+.race-cont {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+
+
+.race-place {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: var(--mainWhite);
+  font-size: 2em;
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, .5);
+  line-height: 1.5;
+  font-family: var(--fontMcLaren);
+  text-align: center;
+}
+
+
+
+@keyframes changeColor {
+  from {
+    color: var(--mainWhite)
+  }
+
+  to {
+    color: var(--mainOrange)
+  }
+}
+
+
+
+
+
+
+
+.track-background {
+  filter: brightness(.3);
+
+}
+
+.track-background,
+.track-white {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.race-cont img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* end of single race short */

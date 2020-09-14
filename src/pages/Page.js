@@ -11,6 +11,9 @@ import Login from './Login'
 
 import ArticlePage from './ArticlePage'
 import DriverPage from './DriverPage'
+import TrackPage from './TrackPage'
+
+
 
 import ErrorPage from './ErrorPage'
 
@@ -34,6 +37,9 @@ const Page = () => {
       </Route>
       <Route path={`/drivers/:name`}>
         <DriverPage />
+      </Route>
+      <Route path={`/schedule/:id`}>
+        <TrackPage />
       </Route>
       <ErrorPage />
     </Switch>
