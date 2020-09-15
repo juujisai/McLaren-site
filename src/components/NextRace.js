@@ -29,28 +29,33 @@ class NextRace extends React.Component {
   findNextRace() {
     const schedule = this.state.schedule
 
-
-
-    // const months = schedule.map(race => race.month)
-
     const checkSchedule1 = schedule.filter(race => race.month.includes(this.state.todaysDate.month))
 
-    let lastRace = checkSchedule1.filter(race => race.dayStart < this.state.todaysDate.day)
+    if (checkSchedule1.length !== 0) {
+      checkSchedule1[checkSchedule1.length - 1].month.includes('/') ? checkSchedule1.pop() : console.log('left alone')
 
-    lastRace = lastRace[lastRace.length - 1]
+      let nextRace = checkSchedule1.filter(race => Number(race.dayEnd) >= this.state.todaysDate.day)
 
+      let daysDelta = nextRace.map(one => Math.abs(one.dayEnd - this.state.todaysDate.day))
 
-    if (typeof lastRace !== 'undefined') {
+      let daysDeltaMin = Math.min(...daysDelta)
 
+      let idOfNextRace = daysDelta.indexOf(daysDeltaMin)
 
-      this.setState({
-        lastRace: this.state.schedule[lastRace.id],
-        nextRace: this.state.schedule[lastRace.id + 1]
+      nextRace = nextRace[idOfNextRace]
 
-      })
+      if (typeof nextRace == 'undefined') {
+        this.setState({
+          nextRace: schedule[schedule.length - 1]
+        })
+      }
+
+      if (typeof nextRace !== 'undefined') {
+        this.setState({
+          nextRace
+        })
+      }
     }
-
-
   }
 
 
@@ -70,10 +75,11 @@ class NextRace extends React.Component {
       const newCurrentDate = {
         year: newDate.getFullYear(),
         month: newDate.toLocaleString('en-EN', { month: 'long' }).toLowerCase(),
-        // month: 'october',
+        // month: 'august',
         day: newDate.getDate(),
-        hour: newDate.getHours(),
-        minute: newDate.getMinutes(),
+        // day: '1',
+        hour: newDate.getHours().toLocaleString().length === 1 ? `0${newDate.getHours()}` : newDate.getHours(),
+        minute: newDate.getMinutes().toLocaleString().length === 1 ? `0${newDate.getMinutes()}` : newDate.getMinutes(),
         second: newDate.getSeconds().toLocaleString().length === 1 ? `0${newDate.getSeconds()}` : newDate.getSeconds()
       }
 
@@ -128,7 +134,7 @@ class NextRace extends React.Component {
         {typeof todaysDate.year !== 'undefined' && dateCont}
 
         <p>
-          Next race {country}
+          Next race {country} {this.state.nextRace.stats[0].name}
           <br />
           date: {raceDate}-{month}-{raceTime}
 
