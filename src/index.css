@@ -1078,3 +1078,83 @@ footer {
 
 
 /* end of single race short */
+
+
+/* start of next race window */
+.date-today {
+  width: 100%;
+  /* height: 30vh; */
+  /* padding: var(--mainPadding); */
+  background-color: var(--mainBlue);
+  color: var(--mainWhite)
+}
+
+.date-today h3 {
+  padding: var(--mainPadding);
+
+}
+
+
+.date-callendar {
+  display: flex;
+  /* margin-top: calc(var(--mainPadding) / 2); */
+  padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+  background-color: #222;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  border-bottom: var(--borderWidth) solid var(--mainBlue);
+}
+
+.date-callendar p {
+  padding-right: calc(var(--mainPadding) / 2);
+}
+
+
+.date-time {
+  display: flex;
+  background-color: #222;
+
+  padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+
+}
+
+.date-time p {
+  padding-right: calc(var(--mainPadding) / 4);
+
+}
+
+
+.next-race-info {
+  background-color: var(--mainOrange);
+  color: var(--mainWhite);
+  margin-bottom: var(--mainPadding);
+}
+
+.next-race-info h3 {
+  padding: var(--mainPadding);
+  text-transform: capitalize;
+}
+
+.next-race-info h4 {
+  padding-left: var(--mainPadding);
+  /* padding-bottom: var(--mainPadding); */
+  background-color: rgba(0, 0, 0, .3);
+  font-size: .8em;
+  line-height: 2;
+}
+
+.time-to-next {
+  display: flex;
+  background-color: #222;
+
+  padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+
+}
+
+
+.next-days {
+  margin-right: calc(var(--mainPadding) * 2);
+}
+
+/* end of next race window */
