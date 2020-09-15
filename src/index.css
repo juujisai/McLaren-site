@@ -1083,25 +1083,34 @@ footer {
 
 
 /* start of next race window */
+.next-race {
+  background-image: url('./images/schedule/gp1_photo.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
 .date-today {
   width: 100%;
-  /* height: 30vh; */
-  /* padding: var(--mainPadding); */
-  background-color: var(--mainBlue);
+  /* background-color: var(--mainBlue); */
   color: var(--mainWhite)
 }
 
 .date-today h3 {
   padding: var(--mainPadding);
+  background-color: rgba(1, 111, 190, .8);
+
   font-family: var(--fontHeads);
 }
 
 
 .date-callendar {
   display: flex;
-  /* margin-top: calc(var(--mainPadding) / 2); */
   padding: calc(var(--mainPadding) / 2) var(--mainPadding);
-  background-color: #222;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: opacity(.5);
+
   flex-direction: row-reverse;
   justify-content: flex-end;
 
@@ -1115,7 +1124,7 @@ footer {
 
 .date-time {
   display: flex;
-  background-color: #222;
+  background-color: rgba(0, 0, 0, .5);
 
   padding: calc(var(--mainPadding) / 2) var(--mainPadding);
 
@@ -1128,7 +1137,7 @@ footer {
 
 
 .next-race-info {
-  background-color: var(--mainOrange);
+  /* background-color: var(--mainOrange); */
   color: var(--mainWhite);
   margin-bottom: var(--mainPadding);
 }
@@ -1137,14 +1146,16 @@ footer {
   padding: var(--mainPadding);
   text-transform: capitalize;
   font-family: var(--fontHeads);
+  background-color: rgba(253, 156, 1, .8);
 
 }
 
 .next-race-info h4 {
   padding-left: var(--mainPadding);
-  /* padding-bottom: var(--mainPadding); */
-  /* background-color: rgba(0, 0, 0, .3); */
-  background-color: #222;
+
+  /* background-color: #222; */
+  background-color: rgba(0, 0, 0, .5);
+
   border-bottom: var(--borderWidth) solid var(--mainOrange);
 
   font-size: .8em;
@@ -1153,7 +1164,8 @@ footer {
 
 .time-to-next {
   display: flex;
-  background-color: #222;
+  /* background-color: #222; */
+  background-color: rgba(0, 0, 0, .5);
 
   padding: calc(var(--mainPadding) / 2) var(--mainPadding);
 

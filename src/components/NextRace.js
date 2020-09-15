@@ -188,7 +188,7 @@ class NextRace extends React.Component {
     const race = sessions[sessions.length - 1]
 
     const raceDate = race.date
-    const raceTime = `${race.time}:10`
+    // const raceTime = `${race.time}:10`
 
 
     let { days, hours, minutes, seconds } = this.state.timeToNext
