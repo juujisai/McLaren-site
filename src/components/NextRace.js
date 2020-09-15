@@ -170,7 +170,7 @@ class NextRace extends React.Component {
         <div className="date-callendar">
           <p className='date-today-year'>{todaysDate.year}</p>
           <p className='date-today-month'>{todaysDate.month}</p>
-          <p className='date-today-month'>{todaysDate.day}</p>
+          <p className='date-today-day'>{todaysDate.day}</p>
         </div>
         <div className="date-time">
           <p className='time-hour'>{todaysDate.hour} :</p>
@@ -207,7 +207,7 @@ class NextRace extends React.Component {
 
           <h3>Next race: {country}</h3>
           <h4>track: {this.state.nextRace.stats[0].name}</h4>
-          <h4>date: {raceDate}-{month}-{raceTime}</h4>
+          <h4>date: {raceDate} {month} {2020}</h4>
 
           <div className="time-to-next">
             <p>{days > 0 && <span className="next-days">{days} days </span>}<span className="next-hours">{hours.toString().length === 1 ? `0${hours}` : `${hours}`}</span> : <span className="next-minutes">{minutes.toString().length === 1 ? `0${minutes}` : `${minutes}`}</span> : <span className="next-seconds">{seconds.toString().length === 1 ? `0${seconds}` : `${seconds}`}</span></p>
