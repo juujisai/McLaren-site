@@ -508,6 +508,15 @@ footer {
   animation: arrowRotate 1s infinite linear;
 }
 
+.loading-arrow img {
+  /* margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform: rotate(0);
+  animation: arrowRotate 1s infinite linear;
+}
+
 @keyframes arrowRotate {
   from {
     transform: rotate(0)
