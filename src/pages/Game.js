@@ -42,7 +42,7 @@ class Game extends React.Component {
       <div className="game-lights">
         <div className="light-main-1">
           <span className="light-1"></span>
-          <span className="light-2"></span>
+          <span className={`light-2`}></span>
         </div>
         <div className="light-main-2">
           <span className="light-1"></span>
