@@ -1,13 +1,13 @@
 import React from 'react';
 
-import audio1 from '../media/normal.mp3'
+import audio1 from '../media/normal2.mp3'
 import audio2 from '../media/rev.mp3'
 import audio3 from '../media/derev.mp3'
 
 class Game extends React.Component {
   state = {
-    startGame: true,
-    hideInfo: true,
+    startGame: false,
+    hideInfo: false,
     showLights: true,
     clutchPressed: false,
     clutchReleased: true,
@@ -133,7 +133,7 @@ class Game extends React.Component {
     )
 
 
-    setInterval(() => { this.setState({ audioType: 1 }) }, 1000)
+    setInterval(() => { this.setState(prevState => { return { audioType: 1 } }) }, 2000)
 
   }
 
@@ -190,7 +190,7 @@ class Game extends React.Component {
     )
 
     const audio3c = (
-      <audio autoPlay loop>
+      <audio autoPlay >
         {this.state.audioType === 3 && <source src={audio3} type='audio/mp3'></source>}
     Your browser does not support the audio element.
       </audio>
@@ -211,9 +211,9 @@ class Game extends React.Component {
           {this.state.showLights ? lights : null}
 
           {this.state.time !== 0 && <div className='reaction-time'>{this.state.time.toFixed(3)}</div>}
-          {this.state.startGame && audio1c}
-          {this.state.startGame && audio2c}
-          {this.state.startGame && audio3c}
+          {this.state.startGame && this.state.audioType === 1 && audio1c}
+          {this.state.audioType === 2 && audio2c}
+          {this.state.audioType === 3 && audio3c}
 
           <div className="clutch" onMouseDown={this.handleClutchPress} onTouchStart={this.handleClutchPress} onTouchEnd={this.handleClutchRelease} onMouseUp={this.handleClutchRelease}>
             <span>clutch</span>
