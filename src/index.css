@@ -1477,4 +1477,19 @@ footer {
 
 }
 
+
+.game-lights .light-red {
+  background-color: rgb(255, 0, 0);
+
+}
+
+.reaction-time {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: var(--mainWhite)
+}
+
 /* end of game page */
