@@ -16,6 +16,7 @@ class Game extends React.Component {
       light5: false,
     },
     time: 0,
+    getTime: [0, 0]
   }
 
   reactionTimeInterval;
@@ -57,14 +58,20 @@ class Game extends React.Component {
 
       // --------------
       setTimeout(() => {
+        // let timeStart = new Date()
+        // timeStart = timeStart.getTime()
+
+
+        // times 4 - just for test - check why something is wrong
         this.reactionTimeInterval = setInterval(() => {
           this.setState({
-            time: this.state.time + 0.001,
+            time: this.state.time + 0.001 * 4,
 
           })
         }, 1)
 
         this.setState({
+          // getTime: [timeStart, 0],
           isLightRed: {
             light1: false,
             light2: false,
@@ -73,7 +80,7 @@ class Game extends React.Component {
             light5: false,
           },
         })
-      }, 1000 + 5 * 1000 + randomTime)
+      }, 5 * 1000 + randomTime)
       // --------------
 
 
@@ -94,9 +101,14 @@ class Game extends React.Component {
 
   handleClutchRelease = () => {
     console.log('release')
+    // let endTime = new Date()
+    // endTime = endTime.getTime()
+
+    // let time = (endTime - this.state.getTime[0]) / 1000
 
     clearInterval(this.reactionTimeInterval)
     this.setState({
+      // time,
       isLightRed: {
         light1: false,
         light2: false,
@@ -111,7 +123,7 @@ class Game extends React.Component {
 
 
   render() {
-
+    console.log(this.state.getTime)
     const info = (
       <div className="info-game">
         <p>Press clutch to start the engine. Release after 5 red lights disappear</p>
