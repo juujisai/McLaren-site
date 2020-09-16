@@ -1,5 +1,8 @@
 import React from 'react';
 
+import audio1 from '../media/normal.mp3'
+import audio2 from '../media/rev.mp3'
+import audio3 from '../media/derev.mp3'
 
 class Game extends React.Component {
   state = {
@@ -16,7 +19,8 @@ class Game extends React.Component {
       light5: false,
     },
     time: 0,
-    getTime: [0, 0]
+    getTime: [0, 0],
+    audioType: 1
   }
 
   reactionTimeInterval;
@@ -33,6 +37,10 @@ class Game extends React.Component {
     //change lights
 
     setTimeout(() => {
+
+      this.setState({ audioType: 2 })
+
+
 
       for (let i = 0; i < 5; i++) {
         setTimeout(() => {
@@ -106,9 +114,14 @@ class Game extends React.Component {
 
     // let time = (endTime - this.state.getTime[0]) / 1000
 
+    this.setState({})
+
+
+
     clearInterval(this.reactionTimeInterval)
     this.setState({
       // time,
+      audioType: 3,
       isLightRed: {
         light1: false,
         light2: false,
@@ -119,11 +132,14 @@ class Game extends React.Component {
     }
     )
 
+
+    setInterval(() => { this.setState({ audioType: 1 }) }, 1000)
+
   }
 
 
   render() {
-    console.log(this.state.getTime)
+    console.log(this.state.audioType)
     const info = (
       <div className="info-game">
         <p>Press clutch to start the engine. Release after 5 red lights disappear</p>
@@ -157,6 +173,30 @@ class Game extends React.Component {
       </div>
     )
 
+
+
+    const audio1c = (
+      <audio autoPlay loop>
+        {this.state.audioType === 1 && <source src={audio1} type='audio/mp3'></source>}
+    Your browser does not support the audio element.
+      </audio>
+    )
+
+    const audio2c = (
+      <audio autoPlay loop>
+        {this.state.audioType === 2 && <source src={audio2} type='audio/mp3'></source>}
+    Your browser does not support the audio element.
+      </audio>
+    )
+
+    const audio3c = (
+      <audio autoPlay loop>
+        {this.state.audioType === 3 && <source src={audio3} type='audio/mp3'></source>}
+    Your browser does not support the audio element.
+      </audio>
+    )
+
+
     return (
       <div className='game'>
 
@@ -171,7 +211,9 @@ class Game extends React.Component {
           {this.state.showLights ? lights : null}
 
           {this.state.time !== 0 && <div className='reaction-time'>{this.state.time.toFixed(3)}</div>}
-
+          {this.state.startGame && audio1c}
+          {this.state.startGame && audio2c}
+          {this.state.startGame && audio3c}
 
           <div className="clutch" onMouseDown={this.handleClutchPress} onTouchStart={this.handleClutchPress} onTouchEnd={this.handleClutchRelease} onMouseUp={this.handleClutchRelease}>
             <span>clutch</span>

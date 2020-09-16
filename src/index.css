@@ -1414,6 +1414,7 @@ footer {
   font-weight: 700;
   font-family: var(--fontMcLaren);
   text-align: center;
+  z-index: 9;
 }
 
 .clutch {
