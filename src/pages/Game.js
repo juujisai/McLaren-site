@@ -64,103 +64,110 @@ class Game extends React.Component {
     const lights = []
 
     //change lights
-
-    setTimeout(() => {
-
-
-      if (this.state.volumeOn) {
-
-        const audio = document.getElementById('audio-game')
-        audio.removeEventListener('ended', this.handleDefaultAudio)
-        audio.pause()
-        audio.src = audio2;
-        audio.load();
-        audio.play();
-        audio.addEventListener('ended', this.handleAudio)
-      }
-
-      for (let i = 0; i < 5; i++) {
-
-        setTimeout(() => {
-          if (!this.state.clutchReleased) {
-
-            lights.push(true)
-            console.log('pressed')
-
-            // console.log(lights)
-
-
-            this.setState({
-              isLightRed: {
-                light1: lights[0],
-                light2: lights[1],
-                light3: lights[2],
-                light4: lights[3],
-                light5: lights[4],
-              }
-            })
-
-          } else {
-            this.setState({ falsestart: true })
-          }
-        }, 1000 * i + 1)
-
-
-
-
-
-      }
-      let randomTime = Math.floor(Math.random() * (1000 - 300) + 300)
-
-      // --------------
+    if (!this.state.falsestart) {
+      console.log('going')
       setTimeout(() => {
-        // let timeStart = new Date()
-        // timeStart = timeStart.getTime()
 
-        if (!this.state.falsestart && !this.state.clutchReleased) {
 
-          // times 4 - just for test - check why something is wrong
-          this.reactionTimeInterval = setInterval(() => {
-            this.setState({
-              time: this.state.time + 0.001 * 4,
+        if (this.state.volumeOn) {
 
-            })
-          }, 1)
-
-          this.setState({
-            // getTime: [timeStart, 0],
-            isLightRed: {
-              light1: false,
-              light2: false,
-              light3: false,
-              light4: false,
-              light5: false,
-            },
-          })
-
+          const audio = document.getElementById('audio-game')
+          audio.removeEventListener('ended', this.handleDefaultAudio)
+          audio.pause()
+          audio.src = audio2;
+          audio.load();
+          audio.play();
+          audio.addEventListener('ended', this.handleAudio)
         }
 
-      }, 5 * 1000 + randomTime)
-      // --------------
+        for (let i = 0; i < 5; i++) {
 
-    }, 1000)
+          setTimeout(() => {
+            if (!this.state.clutchReleased) {
+
+              lights.push(true)
+              console.log('pressed')
+
+              // console.log(lights)
+
+
+              this.setState({
+                isLightRed: {
+                  light1: lights[0],
+                  light2: lights[1],
+                  light3: lights[2],
+                  light4: lights[3],
+                  light5: lights[4],
+                }
+              })
+
+            } else {
+              console.log('setting falsestart')
+              this.setState({ falsestart: true })
+            }
+          }, 1000 * i + 1)
 
 
 
 
-    this.setState({
-      hideInfo: true,
-      clutchReleased: false,
 
-      time: 0
-    })
+        }
+        let randomTime = Math.floor(Math.random() * (1000 - 300) + 300)
+
+        // --------------
+        setTimeout(() => {
+          // let timeStart = new Date()
+          // timeStart = timeStart.getTime()
+          console.log(this.state.falsestart, this.state.clutchReleased)
+
+          if (!this.state.falsestart && !this.state.clutchReleased) {
+            // times 4 - just for test - check why something is wrong
+            this.reactionTimeInterval = setInterval(() => {
+              this.setState({
+                time: this.state.time + 0.001 * 4,
+
+              })
+            }, 1)
+
+            this.setState({
+              // getTime: [timeStart, 0],
+              isLightRed: {
+                light1: false,
+                light2: false,
+                light3: false,
+                light4: false,
+                light5: false,
+              },
+            })
+
+          }
+
+        }, 5 * 1000 + randomTime)
+        // --------------
+
+      }, 1000)
+
+
+
+
+      this.setState({
+        hideInfo: true,
+        clutchReleased: false,
+
+        time: 0
+      })
+
+    }
   }
 
   handleClutchRelease = (e) => {
     console.log('release')
-    // if (e.cancelable) {
-    //   e.preventDefault();
-    // } console.log(e)
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+    // e.preventDefault();
+
+    // console.log(e.cancelable)
     // let endTime = new Date()
     // endTime = endTime.getTime()
 
@@ -221,7 +228,7 @@ class Game extends React.Component {
     // only update chart if the data has changed
     if (prevState.falsestart !== this.state.falsestart) {
       setTimeout(() => {
-        this.setState({ falsestart: false })
+        this.setState({ falsestart: false, time: 0 })
       }, 3000)
     }
   }
@@ -238,6 +245,9 @@ class Game extends React.Component {
 
 
   render() {
+
+    console.log(`false start ${this.state.falsestart}`, this.state.time)
+
     const info = (
       <div className="info-game">
         <p>Press clutch to start the engine. Release after 5 red lights disappear</p>
@@ -250,23 +260,23 @@ class Game extends React.Component {
       <div className="game-lights">
         <div className="light-main-1">
           <span className="light-1"></span>
-          <span className={`light-2 ${isLightRed.light1 ? `light-red` : null}`}></span>
+          <span className={`light - 2 ${isLightRed.light1 ? `light-red` : null}`}></span>
         </div>
         <div className="light-main-2">
           <span className="light-1"></span>
-          <span className={`light-2 ${isLightRed.light2 ? `light-red` : null}`}></span>
+          <span className={`light - 2 ${isLightRed.light2 ? `light-red` : null}`}></span>
         </div>
         <div className="light-main-3">
           <span className="light-1"></span>
-          <span className={`light-2 ${isLightRed.light3 ? `light-red` : null}`}></span>
+          <span className={`light - 2 ${isLightRed.light3 ? `light-red` : null}`}></span>
         </div>
         <div className="light-main-4">
           <span className="light-1"></span>
-          <span className={`light-2 ${isLightRed.light4 ? `light-red` : null}`}></span>
+          <span className={`light - 2 ${isLightRed.light4 ? `light-red` : null}`}></span>
         </div>
         <div className="light-main-5">
           <span className="light-1"></span>
-          <span className={`light-2 ${isLightRed.light5 ? `light-red` : null}`}></span>
+          <span className={`light - 2 ${isLightRed.light5 ? `light-red` : null}`}></span>
         </div>
       </div>
     )
@@ -284,7 +294,7 @@ class Game extends React.Component {
     return (
       <div className='game'>
 
-        <div className={`screen-start ${this.state.startGame ? 'hide' : ''}`}>
+        <div className={`screen - start ${this.state.startGame ? 'hide' : ''}`}>
           <button className="start-game" onClick={this.handleStartGameButton}>
             Start game
         </button>
@@ -303,9 +313,14 @@ class Game extends React.Component {
           {this.state.falsestart && <div className='false-start'>false start</div>}
 
 
-          <div className="clutch" onMouseDown={this.handleClutchPress} onTouchStart={this.handleClutchPress} onTouchEnd={this.handleClutchRelease} onMouseUp={this.handleClutchRelease}>
+          <div className="clutch" onMouseDown={this.state.falsestart ? null : this.handleClutchPress} onTouchStart={this.state.falsestart ? null : this.handleClutchPress} onTouchEnd={this.state.falsestart ? null : this.handleClutchRelease} onMouseUp={this.state.falsestart ? null : this.handleClutchRelease}>
             <span>clutch</span>
           </div>
+          {/* 
+          <div className="clutch" onMouseDown={this.handleClutchPress} onTouchStart={this.handleClutchPress} onTouchEnd={this.handleClutchRelease} onMouseUp={this.handleClutchRelease}>
+            <span>clutch</span>
+          </div> */}
+
         </div>
 
 
