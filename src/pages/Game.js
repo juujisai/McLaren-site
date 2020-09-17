@@ -12,8 +12,8 @@ import { FaVolumeUp as MusicOn, FaVolumeMute as MusicOff } from 'react-icons/fa'
 
 class Game extends React.Component {
   state = {
-    startGame: true,
-    hideInfo: true,
+    startGame: false,
+    hideInfo: false,
     showLights: true,
     falsestart: false,
     clutchReleased: true,
