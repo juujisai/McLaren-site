@@ -1528,3 +1528,113 @@ footer {
 }
 
 /* end of game page */
+
+
+
+/* login page */
+.login-page {
+  width: 100%;
+
+}
+
+.login-page h3 {
+  margin-bottom: var(--mainPadding);
+  color: var(--mainBlue);
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.input-cont {
+  width: 100%;
+
+  margin-bottom: var(--mainPadding);
+  display: flex;
+  justify-content: center;
+
+}
+
+.input-cont input {
+  padding: calc(var(--mainPadding) / 2) 0;
+  width: 70%;
+
+  text-align: center;
+  border-radius: 20px;
+  border: var(--borderWidth) solid var(--mainOrange);
+  transition: var(--mainTransition);
+  outline: none;
+}
+
+.input-cont input:focus {
+  width: 90%;
+  border: var(--borderWidth) solid var(--mainBlue);
+
+}
+
+.btn-login {
+  margin: var(--mainPadding) auto;
+  padding: calc(var(--mainPadding) / 2) 0;
+
+  display: block;
+  width: 35%;
+  background-color: transparent;
+  border-radius: 20px;
+  border: var(--borderWidth) solid var(--mainBlue);
+  transition: var(--mainTransition);
+  outline: none;
+
+  text-transform: uppercase;
+}
+
+.info-account {
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: var(--mainPadding);
+}
+
+.btn-create-account {
+  width: 60%;
+}
+
+.red {
+  color: #f00
+}
+
+.info-account span {
+  display: block;
+}
+
+
+.result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  z-index: 30;
+
+
+  color: var(--mainWhite)
+}
+
+.danger,
+.success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  font-family: var(--fontMcLaren);
+}
+
+.success {
+  background-color: rgb(6, 172, 20);
+}
+
+.danger {
+  background-color: rgb(182, 28, 28);
+}
+
+/* end of login page */
