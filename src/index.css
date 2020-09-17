@@ -1493,4 +1493,16 @@ footer {
   color: var(--mainWhite)
 }
 
+.game-sound {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  z-index: 25;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5em;
+  color: var(--mainWhite)
+}
+
+
 /* end of game page */

@@ -6,6 +6,10 @@ import audio22 from '../media/rev2.mp3'
 
 import audio3 from '../media/derev.mp3'
 
+
+import { FaVolumeUp as MusicOn, FaVolumeMute as MusicOff } from 'react-icons/fa'
+
+
 class Game extends React.Component {
   state = {
     startGame: false,
@@ -22,6 +26,7 @@ class Game extends React.Component {
     },
     time: 0,
     getTime: [0, 0],
+    volumeOn: false,
   }
 
   reactionTimeInterval;
@@ -160,6 +165,8 @@ class Game extends React.Component {
       },
     }
     )
+
+
     const audio = document.getElementById('audio-game')
     audio.removeEventListener('ended', this.handleAudio)
     audio.pause()
@@ -171,12 +178,32 @@ class Game extends React.Component {
 
   }
 
+  switchVolume = () => {
+    let flag = this.state.volumeOn
+    const audio = document.getElementById('audio-game')
+
+    if (flag) {
+      audio.volume = 0;
+
+    } else {
+      audio.volume = 1;
+
+    }
+
+    console.log(audio.volume)
+    this.setState({ volumeOn: !flag })
+  }
+
   componentDidMount = () => {
     const audio = document.getElementById('audio-game')
-    console.log(audio)
+    audio.volume = this.state.volumeOn;
     audio.addEventListener('ended', this.handleDefaultAudio)
   }
+
+
+
   render() {
+    console.log(this.state.volumeOn)
     const info = (
       <div className="info-game">
         <p>Press clutch to start the engine. Release after 5 red lights disappear</p>
@@ -236,6 +263,8 @@ class Game extends React.Component {
           {this.state.time !== 0 && <div className='reaction-time'>{this.state.time.toFixed(3)}</div>}
 
           {audioC}
+
+          <button className="game-sound" onClick={this.switchVolume}>{this.state.volumeOn ? <MusicOn /> : <MusicOff />}</button>
 
           <div className="clutch" onMouseDown={this.handleClutchPress} onTouchStart={this.handleClutchPress} onTouchEnd={this.handleClutchRelease} onMouseUp={this.handleClutchRelease}>
             <span>clutch</span>
