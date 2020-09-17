@@ -1504,5 +1504,27 @@ footer {
   color: var(--mainWhite)
 }
 
+.false-start {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #f00;
+  color: #fff;
+  width: 100%;
+  height: 30vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  text-transform: uppercase;
+  font-size: 2em;
+
+  font-family: var(--fontMcLaren);
+
+}
 
 /* end of game page */
