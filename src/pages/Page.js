@@ -33,7 +33,6 @@ const Page = () => {
       {pages}
       <Route path={'/login'}>
         <Login />
-
       </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />

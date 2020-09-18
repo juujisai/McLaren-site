@@ -6,19 +6,26 @@ import GalleryProvider from './context/GalleryContext'
 import ResultsProvider from './context/ResultsContext'
 import DriverProvider from './context/DriverContext'
 import ScheduleProvider from './context/ScheduleContext'
+import AllUsersProvider from './context/AllUsersContext'
+import LoggedUserProvider from './context/LoggedUserContext'
+
 
 ReactDOM.render(
-  <ScheduleProvider>
-    <DriverProvider>
-      <ResultsProvider>
-        <GalleryProvider>
-          <ArticleProvider>
-            <App />
-          </ArticleProvider>
-        </GalleryProvider>
-      </ResultsProvider>
-    </DriverProvider>
-  </ScheduleProvider>
+  <LoggedUserProvider>
+    <AllUsersProvider>
+      <ScheduleProvider>
+        <DriverProvider>
+          <ResultsProvider>
+            <GalleryProvider>
+              <ArticleProvider>
+                <App />
+              </ArticleProvider>
+            </GalleryProvider>
+          </ResultsProvider>
+        </DriverProvider>
+      </ScheduleProvider>
+    </AllUsersProvider>
+  </LoggedUserProvider>
   ,
   document.getElementById('root')
 );

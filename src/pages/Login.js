@@ -1,6 +1,9 @@
 import React from 'react';
 // import pseudoDatabase from '../data/pseudoDatabase'
 import AlertBox from '../components/AllertBox'
+import { AllUsersContext } from '../context/AllUsersContext'
+import { LoggedUserContext } from '../context/LoggedUserContext'
+import Loader from '../components/Loader'
 
 
 const Login = () => {
@@ -13,11 +16,24 @@ const Login = () => {
 
   const [alertShow, setAlertShow] = React.useState(false)
 
-  const [loginResult, setLoginResult] = React.useState({
-    logged: false,
-    username: '',
-    userId: ''
-  })
+  // const [loginResult, setLoginResult] = React.useState({
+  //   logged: false,
+  //   username: '',
+  //   userId: ''
+  // })
+
+  // const { userList, loading } = React.useContext(AllUsersContext)
+  const { loading } = React.useContext(AllUsersContext)
+
+
+  const { setUser } = React.useContext(LoggedUserContext)
+
+  if (loading) {
+    return <Loader />
+  }
+
+
+
 
 
   const createAccountF = () => {
@@ -26,7 +42,7 @@ const Login = () => {
 
 
   const handleChange = (e) => {
-    console.log(e.target.value, e.target.name)
+    // console.log(e.target.value, e.target.name)
 
     e.target.name === "formUsername" ? setFormUsername(e.target.value) : setFormPassword(e.target.value)
 
@@ -35,70 +51,68 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
 
-    const isOk = validate(formUsername, formPassword)
+    const userId = validate(formUsername, formPassword)
 
-    if (isOk) {
-
-
-
+    if (userId) {
       setTimeout(() => {
         setLogin(true)
         setAlertShow(true)
-        setLoginResult({
-          logged: true,
-          username: '',
-          userId: ''
-        })
+        // setLoginResult({
+        //   logged: true,
+        //   username: formUsername,
+        //   userId: userId
+        // })
+
+        setUser(userId)
+
+
       }, 1000)
-
-
 
       setTimeout(() => {
         setAlertShow(false)
 
       }, 5000)
+
 
     } else {
       setTimeout(() => {
         setLogin(false)
         setAlertShow(true)
-        setLoginResult({
-          logged: true,
-          username: '',
-          userId: ''
-        })
+        // setLoginResult({
+        //   logged: true,
+        //   username: 'a',
+        //   userId: ''
+        // })
       }, 1000)
-
-
 
       setTimeout(() => {
         setAlertShow(false)
 
       }, 5000)
-
-
     }
 
 
 
   }
 
-  const validate = (username, password) => {
+  const validate = (u, p) => {
     let loginValue, passwordValue;
 
-    if (username.length >= 5) {
-      loginValue = true
-    } else {
-      loginValue = false
-    }
+    let user;
 
-    if (password.length >= 5) {
+
+    if (u === 'kowal' && p === 'qwerty123') {
+      user = "3ab432kfaw2"
+      loginValue = true;
       passwordValue = true
-    } else {
-      passwordValue = false
+    }
+    if (u === 'nowak' && p === 'qwerty123') {
+      user = "5dt6baah299"
+      loginValue = true;
+      passwordValue = true
     }
 
-    if (loginValue && passwordValue) return true
+    if (loginValue && passwordValue) return user
 
   }
 
@@ -128,7 +142,7 @@ const Login = () => {
       </div>
       <p className='info-account'>Don't have an account?</p>
       <button className='btn-login btn-create-account' onClick={createAccountF}>Create account</button>
-      {createAcconunt && <p className={`info-account red`}>Sorry, this function is not available. Please use one of those:  <span>username: <strong>kowal</strong> password: <strong>qwerty</strong></span> <span>username: <strong>nowak</strong> password: <strong>qwerty</strong></span></p>}
+      {createAcconunt && <p className={`info-account red`}>Sorry, this function is not available. Please use one of those:  <span>username: <strong>kowal</strong> password: <strong>qwerty123</strong></span> <span>username: <strong>nowak</strong> password: <strong>qwerty123</strong></span></p>}
 
       {alertShow && loginMessage}
     </div>
