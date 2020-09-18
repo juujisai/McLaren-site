@@ -20,7 +20,7 @@ import ErrorPage from './ErrorPage'
 
 const Page = () => {
 
-  const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />, <Login />]
+  const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />]
 
   const pages = navData.map((item, id) => (
     <Route path={item.path} key={id} exact>
@@ -28,10 +28,13 @@ const Page = () => {
     </Route>
   )
   )
-
   return (
     <Switch>
       {pages}
+      <Route path={'/login'}>
+        <Login />
+
+      </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />
       </Route>

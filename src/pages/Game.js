@@ -294,7 +294,7 @@ class Game extends React.Component {
     return (
       <div className='game'>
 
-        <div className={`screen - start ${this.state.startGame ? 'hide' : ''}`}>
+        <div className={`screen-start ${this.state.startGame ? 'hide' : ''}`}>
           <button className="start-game" onClick={this.handleStartGameButton}>
             Start game
         </button>

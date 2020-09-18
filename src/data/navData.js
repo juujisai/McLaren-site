@@ -35,9 +35,9 @@ export default [
     name: 'game',
     img: img5
   },
-  {
-    path: '/login',
-    name: 'login',
-    img: img1
-  },
+  // {
+  //   path: '/login',
+  //   name: 'login',
+  //   img: img1
+  // },
 ]

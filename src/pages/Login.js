@@ -51,7 +51,7 @@ const Login = () => {
 
 
   const loginMessage = (
-    <div className={`result`}>
+    <div className={`result2`}>
       <AlertBox
         type={login ? 'success' : 'danger'}
         message={login ? 'You have succesfully logged in. Welcome!' : 'Incorect username or password. Please try again.'}

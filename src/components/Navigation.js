@@ -26,6 +26,9 @@ const Navigation = () => {
         <button className='btn-menu' onClick={handleClick}><ArrowRight /></button>
         <ul>
           {navi}
+          <li >
+            <NavLink to={'/login'} exact>{'login'}</NavLink>
+          </li>
         </ul>
       </nav>
     </>
