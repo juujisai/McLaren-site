@@ -24,31 +24,83 @@ const Login = () => {
     setScreateAccount(true)
   }
 
+
+  const handleChange = (e) => {
+    console.log(e.target.value, e.target.name)
+
+    e.target.name === "formUsername" ? setFormUsername(e.target.value) : setFormPassword(e.target.value)
+
+  }
+
   const handleLogin = (e) => {
     e.preventDefault()
 
+    const isOk = validate(formUsername, formPassword)
 
-    setTimeout(() => {
-      setLogin(true)
-      setAlertShow(true)
-      setLoginResult({
-        logged: true,
-        username: '',
-        userId: ''
-      })
-    }, 1000)
+    if (isOk) {
 
 
 
-    setTimeout(() => {
-      setAlertShow(false)
+      setTimeout(() => {
+        setLogin(true)
+        setAlertShow(true)
+        setLoginResult({
+          logged: true,
+          username: '',
+          userId: ''
+        })
+      }, 1000)
 
-    }, 3000)
+
+
+      setTimeout(() => {
+        setAlertShow(false)
+
+      }, 5000)
+
+    } else {
+      setTimeout(() => {
+        setLogin(false)
+        setAlertShow(true)
+        setLoginResult({
+          logged: true,
+          username: '',
+          userId: ''
+        })
+      }, 1000)
+
+
+
+      setTimeout(() => {
+        setAlertShow(false)
+
+      }, 5000)
+
+
+    }
+
 
 
   }
 
+  const validate = (username, password) => {
+    let loginValue, passwordValue;
 
+    if (username.length >= 5) {
+      loginValue = true
+    } else {
+      loginValue = false
+    }
+
+    if (password.length >= 5) {
+      passwordValue = true
+    } else {
+      passwordValue = false
+    }
+
+    if (loginValue && passwordValue) return true
+
+  }
 
   const loginMessage = (
     <div className={`result2`}>
@@ -66,10 +118,10 @@ const Login = () => {
       <div className="form">
         <form>
           <div className="input-cont">
-            <input type="text" id="nickname" placeholder='username' autoComplete='off' />
+            <input type="text" id="nickname" name="formUsername" placeholder='username' autoComplete='off' value={formUsername} onChange={handleChange} />
           </div>
           <div className="input-cont">
-            <input type="password" id="password" placeholder='password' autoComplete='off' />
+            <input type="password" id="password" name="formPassword" placeholder='password' autoComplete='off' value={formPassword} onChange={handleChange} />
           </div>
           <button className='btn-login' onClick={handleLogin}>Login</button>
         </form>
