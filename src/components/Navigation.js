@@ -2,6 +2,7 @@ import React from 'react';
 import navData from '../data/navData';
 import { NavLink } from 'react-router-dom'
 import { FaArrowAltCircleRight as ArrowRight, FaArrowAltCircleLeft as ArrowLeft } from 'react-icons/fa'
+import { LoggedUserContext } from '../context/LoggedUserContext'
 
 
 const Navigation = () => {
@@ -11,6 +12,7 @@ const Navigation = () => {
   const handleClick = () => {
     hideNavi ? setHideNavi(false) : setHideNavi(true)
   }
+  const { loggedUser } = React.useContext(LoggedUserContext)
 
 
   const navi = navData.map((nav, id) => (
@@ -26,9 +28,7 @@ const Navigation = () => {
         <button className='btn-menu' onClick={handleClick}><ArrowRight /></button>
         <ul>
           {navi}
-          <li >
-            <NavLink to={'/login'} exact>{'login'}</NavLink>
-          </li>
+          <li>{loggedUser ? <NavLink to={'/account'} exact>{'my account'}</NavLink> : <NavLink to={'/login'} exact>{'login'}</NavLink>}</li>
         </ul>
       </nav>
     </>

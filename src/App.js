@@ -13,22 +13,12 @@ import ArrowToTop from './components/ArrowToTop'
 
 import { LoggedUserContext } from './context/LoggedUserContext'
 
+import defaultAvatar from './images/users/default-avatar.png'
 
 // import Logo from './components/Logo'
 
 function App() {
   const { loggedUser } = React.useContext(LoggedUserContext)
-
-
-
-  // const [userS, setUser] = React.useState(user)
-
-
-  // useEffect(() => {
-  //   console.log(userS)
-  //   setUser(user)
-  // }, [user, userS])
-
 
   return (
     <Router  >
@@ -36,7 +26,7 @@ function App() {
       <ArrowToTop />
       <Header />
       <Logo />
-      {loggedUser && <h1>Hello {loggedUser.userName}</h1>}
+      {loggedUser && <div className="user-logged"><div className="avatar"><img src={loggedUser.img === '' ? defaultAvatar : loggedUser.img} alt="" /></div><h1>Hello {loggedUser.userName}</h1></div>}
       <Page />
       <Footer />
     </Router>

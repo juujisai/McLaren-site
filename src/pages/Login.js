@@ -4,7 +4,7 @@ import AlertBox from '../components/AllertBox'
 import { AllUsersContext } from '../context/AllUsersContext'
 import { LoggedUserContext } from '../context/LoggedUserContext'
 import Loader from '../components/Loader'
-
+// import { Route, Redirect } from 'react-router-dom'
 
 const Login = () => {
 
@@ -15,7 +15,7 @@ const Login = () => {
   const [formPassword, setFormPassword] = React.useState('')
 
   const [alertShow, setAlertShow] = React.useState(false)
-
+  // const [redirect, setRedirect] = React.useState(false)
   // const [loginResult, setLoginResult] = React.useState({
   //   logged: false,
   //   username: '',
@@ -55,6 +55,7 @@ const Login = () => {
 
     if (userId) {
       setTimeout(() => {
+        localStorage.setItem('user', JSON.stringify(userId))
         setLogin(true)
         setAlertShow(true)
         // setLoginResult({
@@ -135,7 +136,7 @@ const Login = () => {
             <input type="text" id="nickname" name="formUsername" placeholder='username' autoComplete='off' value={formUsername} onChange={handleChange} />
           </div>
           <div className="input-cont">
-            <input type="password" id="password" name="formPassword" placeholder='password' autoComplete='off' value={formPassword} onChange={handleChange} />
+            <input type="text" id="password" name="formPassword" placeholder='password' autoComplete='off' value={formPassword} onChange={handleChange} />
           </div>
           <button className='btn-login' onClick={handleLogin}>Login</button>
         </form>
@@ -145,6 +146,7 @@ const Login = () => {
       {createAcconunt && <p className={`info-account red`}>Sorry, this function is not available. Please use one of those:  <span>username: <strong>kowal</strong> password: <strong>qwerty123</strong></span> <span>username: <strong>nowak</strong> password: <strong>qwerty123</strong></span></p>}
 
       {alertShow && loginMessage}
+
     </div>
   );
 }

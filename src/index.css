@@ -1638,3 +1638,37 @@ footer {
 }
 
 /* end of login page */
+
+
+/* logged user*/
+.user-logged {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: calc(var(--mainPadding) *2);
+}
+
+.user-logged h1 {
+  font-size: 1.5rem;
+  margin: 0 var(--mainPadding);
+}
+
+.avatar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+/* end of logged user */

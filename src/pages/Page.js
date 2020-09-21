@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import navData from '../data/navData'
 
 import Home from './Home'
@@ -13,12 +13,14 @@ import ArticlePage from './ArticlePage'
 import DriverPage from './DriverPage'
 import TrackPage from './TrackPage'
 
-
+import AccountPanel from './AccountPanel'
 
 import ErrorPage from './ErrorPage'
+import { LoggedUserContext } from '../context/LoggedUserContext'
 
 
 const Page = () => {
+  const { loggedUser } = React.useContext(LoggedUserContext)
 
   const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />]
 
@@ -32,7 +34,13 @@ const Page = () => {
     <Switch>
       {pages}
       <Route path={'/login'}>
-        <Login />
+        {/* <Login /> */}
+        {loggedUser ? <Redirect to="/account" /> : <Login />}
+      </Route>
+      <Route path={`/account`}>
+        {/* <AccountPanel /> */}
+        {!loggedUser ? <Redirect to="/login" /> : <AccountPanel />}
+
       </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />
@@ -43,6 +51,7 @@ const Page = () => {
       <Route path={`/schedule/:id`}>
         <TrackPage />
       </Route>
+
       <ErrorPage />
     </Switch>
 

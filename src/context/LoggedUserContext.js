@@ -10,9 +10,16 @@ const LoggedUserProvider = ({ children }) => {
   const [loggedUser, setLoggedUser] = React.useState()
 
   React.useEffect(() => {
-    let u = pseudoDataBase.find(one => one.userId === user)
+    if (localStorage.getItem('user')) {
+
+      setUser(JSON.parse(localStorage.getItem('user')))
+    }
+    let u = pseudoDataBase.find(one => {
+      // console.log(one.userId, user)
+      return one.userId === user
+    })
     setLoggedUser(u)
-  }, [user])
+  }, [user, loggedUser])
 
   return (
     <LoggedUserContext.Provider
