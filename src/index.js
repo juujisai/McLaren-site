@@ -8,24 +8,26 @@ import DriverProvider from './context/DriverContext'
 import ScheduleProvider from './context/ScheduleContext'
 import AllUsersProvider from './context/AllUsersContext'
 import LoggedUserProvider from './context/LoggedUserContext'
-
+import ShopProvider from './context/ShopContext'
 
 ReactDOM.render(
-  <LoggedUserProvider>
-    <AllUsersProvider>
-      <ScheduleProvider>
-        <DriverProvider>
-          <ResultsProvider>
-            <GalleryProvider>
-              <ArticleProvider>
-                <App />
-              </ArticleProvider>
-            </GalleryProvider>
-          </ResultsProvider>
-        </DriverProvider>
-      </ScheduleProvider>
-    </AllUsersProvider>
-  </LoggedUserProvider>
+  <ShopProvider>
+    <LoggedUserProvider>
+      <AllUsersProvider>
+        <ScheduleProvider>
+          <DriverProvider>
+            <ResultsProvider>
+              <GalleryProvider>
+                <ArticleProvider>
+                  <App />
+                </ArticleProvider>
+              </GalleryProvider>
+            </ResultsProvider>
+          </DriverProvider>
+        </ScheduleProvider>
+      </AllUsersProvider>
+    </LoggedUserProvider>
+  </ShopProvider>
   ,
   document.getElementById('root')
 );
