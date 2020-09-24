@@ -12,6 +12,7 @@ import Login from './Login'
 import ArticlePage from './ArticlePage'
 import DriverPage from './DriverPage'
 import TrackPage from './TrackPage'
+import ShopItemPage from './ShopItemPage'
 
 import AccountPanel from './AccountPanel'
 
@@ -51,7 +52,9 @@ const Page = () => {
       <Route path={`/schedule/:id`}>
         <TrackPage />
       </Route>
-
+      <Route path={`/shop/items/:id`}>
+        <ShopItemPage />
+      </Route>
       <ErrorPage />
     </Switch>
 

@@ -82,7 +82,7 @@ class ShopFilters extends React.Component {
 
       priceC = (
         <div >
-          <input type="range" name='price' id="price" min='0' max={filters[3]} onChange={(e) => this.handleChange(e)} value={price} /><label htmlFor='price'> <span className="range-value">{price}</span> <span className="euro">EUR</span></label>
+          <input type="range" name='price' id="price" min='0' max={filters[3]} onChange={(e) => this.handleChange(e)} value={price} /><label htmlFor='price'> less than <span className="range-value">{price}</span> <span className="euro">EUR</span></label>
         </div>
       )
 
