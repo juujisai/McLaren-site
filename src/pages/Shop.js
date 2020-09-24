@@ -2,7 +2,7 @@ import React from 'react';
 import ShopItem from '../components/ShopItem'
 import { ShopContext } from '../context/ShopContext'
 import ShopFilters from '../components/ShopFilters'
-
+import Loader from '../components/Loader'
 const Shop = () => {
 
   const [shopData, setShopData] = React.useState([])
@@ -43,7 +43,10 @@ const Shop = () => {
 
   }, [data, shopData])
 
-  // console.log(shopData)
+  if (shopData.length === 0) {
+    return <Loader />
+  }
+
   return (
     <div>
       <div className="featured-items">
@@ -52,7 +55,6 @@ const Shop = () => {
       </div>
 
       <ShopFilters filters={filters} />
-
 
     </div >
   );
