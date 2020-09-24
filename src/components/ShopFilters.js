@@ -48,15 +48,13 @@ class ShopFilters extends React.Component {
 
 
   componentDidMount() {
-    //     const rangeValueContainer = document.querySelector('.range-value')
-    // rangeValueContainer.
-
-
     this.setState({
       filters: this.props.filters,
       price: this.props.filters[3]
     })
   }
+
+
   render() {
     const { filters, price, category, subCategory, color } = this.state
     console.log(category, subCategory, color, price)
@@ -66,26 +64,25 @@ class ShopFilters extends React.Component {
     if (typeof filters !== 'undefined') {
       categories = filters[1].map((item, id) => (
         <div key={id}>
-          <input type="checkbox" name={"category"} id={item} onChange={(e) => this.handleChange(e, item)} /><label htmlFor={item}>{item}</label>
+          <input type="checkbox" name={"category"} id={item} onChange={(e) => this.handleChange(e, item)} /><span className='new-checkbox'></span><label htmlFor={item}>{item}</label>
         </div>
       ))
 
       subCategories = filters[2].map((item, id) => (
         <div key={id}>
-          <input type="checkbox" name={"subCategory"} id={item === '-' ? 'other' : item} onChange={(e) => this.handleChange(e, item)} /><label htmlFor={item === '-' ? 'other' : item}>{item === '-' ? 'other' : item}</label>
+          <input type="checkbox" name={"subCategory"} id={item === '-' ? 'other' : item} onChange={(e) => this.handleChange(e, item)} /><span className='new-checkbox'></span><label htmlFor={item === '-' ? 'other' : item}>{item === '-' ? 'other' : item}</label>
         </div>
       ))
 
       colors = filters[0].map((item, id) => (
         <div key={id}>
-          <input type="checkbox" name={'color'} id={item} onChange={(e) => this.handleChange(e, item)} /><label htmlFor={item}>{item}</label>
+          <input type="checkbox" name={'color'} id={item} onChange={(e) => this.handleChange(e, item)} /><span className='new-checkbox'></span><label htmlFor={item}>{item}</label>
         </div>
       ))
 
       priceC = (
         <div >
-          <input type="range" name='price' id="price" min='0' max={filters[3]} onChange={(e) => this.handleChange(e)} value={price} /><label htmlFor='price'> EUR </label>
-          <div className="range-value">{price}</div>
+          <input type="range" name='price' id="price" min='0' max={filters[3]} onChange={(e) => this.handleChange(e)} value={price} /><label htmlFor='price'> <span className="range-value">{price}</span> <span className="euro">EUR</span></label>
         </div>
       )
 

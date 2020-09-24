@@ -6,8 +6,8 @@ import Loader from '../components/Loader'
 const Shop = () => {
 
   const [shopData, setShopData] = React.useState([])
-  const [shopSortedData, setShopSortedData] = React.useState([])
-  const [shopFilteredData, setShopFilteredData] = React.useState([])
+  // const [shopSortedData, setShopSortedData] = React.useState([])
+  // const [shopFilteredData, setShopFilteredData] = React.useState([])
   const [featuredItems, setFeaturedItems] = React.useState([])
 
   const { data, filters } = React.useContext(ShopContext)
