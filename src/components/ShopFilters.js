@@ -5,17 +5,22 @@ class ShopFilters extends React.Component {
   constructor(props) {
     super(props)
     this.data = props.filters
+    this.settingData = props.settingData
+    this.fullData = props.fullData
   }
 
   state = {
     price: 0,
     category: [],
     subCategory: [],
-    color: []
+    color: [],
+    fullData: [],
+    newData: [],
   }
 
 
   handleChange = (e, valueToPush = '') => {
+    console.log(':)')
     let name = e.target.name
     let type = e.target.type
 
@@ -29,7 +34,7 @@ class ShopFilters extends React.Component {
     if (type === 'checkbox') {
       let array = this.state[name]
 
-      e.target.checked ? array.push(valueToPush) : array = array.filter(item => item !== valueToPush)
+      e.target.checked ? array = [...array, valueToPush] : array = array.filter(item => item !== valueToPush)
 
       this.setState({
         [name]: array
@@ -40,17 +45,41 @@ class ShopFilters extends React.Component {
 
 
 
+  }
 
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.category, this.state.category)
+    if (prevState.category !== this.state.category || prevState.subCategory !== this.state.subCategory || prevState.color !== this.state.color || prevState.price !== this.state.price) {
+      console.log("updating")
+
+
+      let fullDataNewArray = this.fullData
+      let dataArray = []
+
+      this.state.category.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
+      this.state.subCategory.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.subcategory === item)])
+      this.state.color.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.color.includes(item))])
+      dataArray.length === 0 ? dataArray = fullDataNewArray : dataArray = [...dataArray]
+      dataArray = dataArray.filter(item => item.price <= this.state.price)
+
+      // console.log(dataArray)
+      this.settingData(dataArray)
+      this.setState({ newData: dataArray })
+
+    }
 
 
   }
 
 
   componentDidMount() {
+    this.settingData(this.fullData)
+
     this.setState({
       filters: this.props.filters,
-      price: this.props.filters[3]
+      price: this.props.filters[3],
+      fullData: this.fullData
     })
   }
 
@@ -58,7 +87,7 @@ class ShopFilters extends React.Component {
   render() {
     const { filters, price, category, subCategory, color } = this.state
     console.log(category, subCategory, color, price)
-
+    // console.log(this.state.fullData)
     let categories, subCategories, colors, priceC;
 
     if (typeof filters !== 'undefined') {

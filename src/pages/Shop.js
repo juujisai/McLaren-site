@@ -7,7 +7,7 @@ const Shop = () => {
 
   const [shopData, setShopData] = React.useState([])
   // const [shopSortedData, setShopSortedData] = React.useState([])
-  // const [shopFilteredData, setShopFilteredData] = React.useState([])
+  const [shopFilteredData, setShopFilteredData] = React.useState([])
   const [featuredItems, setFeaturedItems] = React.useState([])
 
   const { data, filters } = React.useContext(ShopContext)
@@ -24,7 +24,9 @@ const Shop = () => {
     <ShopItem key={item.id} data={item} />
   ))
 
-
+  const filteredData = shopFilteredData.map((item, id) => (
+    <ShopItem key={id} data={item} />
+  ))
 
   React.useEffect(() => {
     if (data.length !== 0) {
@@ -43,6 +45,8 @@ const Shop = () => {
 
   }, [data, shopData])
 
+  // console.log(filteredData)
+
   if (shopData.length === 0) {
     return <Loader />
   }
@@ -54,8 +58,11 @@ const Shop = () => {
         {featuredItems.length > 0 && featured}
       </div>
 
-      <ShopFilters filters={filters} />
-
+      <ShopFilters filters={filters} settingData={setShopFilteredData} fullData={shopData} />
+      <div className="shop-items-filtered">
+        <div>Items in list: {shopFilteredData.length}</div>
+        {filteredData}
+      </div>
     </div >
   );
 }

@@ -1866,10 +1866,13 @@ input[type=range]::-ms-fill-upper {
   position: relative;
   margin-bottom: var(--mainPadding);
   width: 70%;
-  background-color: var(--mainOrange);
+  border: var(--borderWidth) solid #ddd
 }
 
-
+.featured-items .shop-item {
+  background-color: var(--mainOrange);
+  border: var(--borderWidth) solid var(--mainOrange)
+}
 
 
 .shop-item h1 {
@@ -1894,34 +1897,37 @@ input[type=range]::-ms-fill-upper {
 }
 
 
-.item-img a {
+/* .item-img a {
   display: block;
   padding: calc(var(--mainPadding)/2) 0;
   color: black;
   text-decoration: none;
   text-align: center;
   text-transform: lowercase;
-}
+} */
 
 .shop-rest {
   position: relative;
-  background-color: var(--mainBlue);
-  padding-bottom: var(--mainPadding);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  /* padding-bottom: var(--mainPadding); */
 }
 
+
 .shop-rest h4 {
-  padding-top: var(--mainPadding);
   text-align: center;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .add-to-cart {
   display: block;
   background-color: transparent;
-  color: white;
-  border: var(--borderWidth) solid var(--mainWhite);
-  padding: 10px 20px;
-  margin: var(--mainPadding) auto 0 auto;
+  border: none;
+  font-size: 2em;
+  outline: none;
+  /* color: white; */
 }
 
 
