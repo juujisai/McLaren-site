@@ -60,7 +60,7 @@ const Shop = () => {
 
       <ShopFilters filters={filters} settingData={setShopFilteredData} fullData={shopData} />
       <div className="shop-items-filtered">
-        <div>Items in list: {shopFilteredData.length}</div>
+        <div className='list-count'>Items in list: <strong>{shopFilteredData.length}</strong></div>
         {filteredData}
       </div>
     </div >
