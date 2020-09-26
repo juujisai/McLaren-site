@@ -2197,4 +2197,11 @@ input[type=range]::-ms-fill-upper {
   width: 100%;
 }
 
+
+.empty-cart {
+  height: 50vh;
+  padding: var(--mainPadding);
+
+}
+
 /* end of cart page */

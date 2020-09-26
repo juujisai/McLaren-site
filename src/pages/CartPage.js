@@ -12,7 +12,7 @@ const CartPage = () => {
   const handleClick = (operator, item) => {
     let prevArray = cartItems
     let thisItemIndex = prevArray.findIndex(one => one === item)
-    console.log(item.amount, item.fullAmount, item)
+    // console.log(item.amount, item.fullAmount, item)
     // console.log(thisItemIndex, thisItem)
 
 
@@ -25,8 +25,8 @@ const CartPage = () => {
 
     prevArray.splice(thisItemIndex, 1, item)
 
-    console.log(prevArray)
-    console.log(item.amount, item.fullAmount, item)
+    // console.log(prevArray)
+    // console.log(item.amount, item.fullAmount, item)
 
     setCartItems([...prevArray])
 
@@ -54,13 +54,11 @@ const CartPage = () => {
   return (
     <div className="cart">
       <h3 className='cart-title'>Your cart</h3>
-      {cartItems2}
+      {cartItems.length === 0 ? <div className='empty-cart'>Your cart is empty. Try adding some items!</div> : cartItems2}
 
 
+      {cartItems.length !== 0 && <div className="total"><h3>Total: {getTotalCost} EUR</h3></div>}
 
-      <div className="total">
-        <h3>Total: {getTotalCost} EUR</h3>
-      </div>
 
 
       <div className='link-back'>

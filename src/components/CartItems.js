@@ -4,7 +4,6 @@ import { BsFillTrash2Fill } from 'react-icons/bs'
 const CartItems = ({ item, handleClick, handleItemRemove }) => {
 
 
-
   return (
 
     <div className="cart-item">

@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
 
   React.useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))
-    console.log(cart)
+    // console.log(cart)
   }, [cart])
 
   return (
