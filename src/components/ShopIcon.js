@@ -9,7 +9,7 @@ const ShopIcon = () => {
 
   return (
     <div className="cart-icon">
-      <FaOpencart /> <span className="cart-items-number">{cart.length}</span>
+      <FaOpencart className='cart-icon-icon' /> <span className="cart-items-number">{cart.length}</span>
     </div>
   );
 }

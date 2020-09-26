@@ -2095,3 +2095,41 @@ input[type=range]::-ms-fill-upper {
 }
 
 /* end of item page */
+
+
+/* cart icon*/
+.cart-icon {
+  position: fixed;
+  left: 5vh;
+  top: 5vh;
+  width: 40px;
+  height: 40px;
+  background-color: var(--mainOrange);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.cart-icon-icon {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: var(--transformCenterObject);
+  width: 50%;
+  height: 50%;
+  color: white;
+  stroke-width: 50px;
+}
+
+.cart-items-number {
+  position: absolute;
+  left: 60%;
+  top: 10%;
+  padding: 1px;
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  text-align: center;
+  font-size: .75em;
+}
+
+/* end of cart icon */
