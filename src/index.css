@@ -1987,7 +1987,7 @@ input[type=range]::-ms-fill-upper {
 
 .item-image {
   width: 50%;
-
+  border: var(--borderWidth) solid black;
 }
 
 .item-image img {
