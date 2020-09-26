@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillTrash2Fill } from 'react-icons/bs'
 
-const CartItems = ({ item, handleClick }) => {
+const CartItems = ({ item, handleClick, handleItemRemove }) => {
 
 
 
@@ -13,7 +13,7 @@ const CartItems = ({ item, handleClick }) => {
           <div className="cart-item-name">{item.name}</div>
           <div className="cart-item-category">({item.category})</div>
         </div>
-        <div className="remove-from-cart"><BsFillTrash2Fill /></div>
+        <div className="remove-from-cart" onClick={() => handleItemRemove(item)}><BsFillTrash2Fill /></div>
       </div>
       <div className="cart-item-img">
         <img src={item.img} alt={item.name} />
@@ -25,7 +25,7 @@ const CartItems = ({ item, handleClick }) => {
         <div className="item-amount">
           <button className="minus" onClick={() => handleClick('minus', item)}>-</button> <span className='amount'>{item.amount}</span> <button className="plus" onClick={() => handleClick('plus', item)}>+</button>
         </div>
-        <div className="cart-item-price-total">Full amount: {item.price * item.amount} EUR</div>
+        <div className="cart-item-price-total">Full amount: {item.fullAmount} EUR</div>
       </div>
     </div>
   );

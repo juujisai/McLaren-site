@@ -13,7 +13,8 @@ const ShopItem = ({ data }) => {
 
   const handleClick = () => {
     setShowAlert(true)
-
+    data.amount = 1;
+    data.fullAmount = data.amount * price
     setCart([...cart, data])
 
     setTimeout(() => {

@@ -10,25 +10,42 @@ const CartPage = () => {
 
 
   const handleClick = (operator, item) => {
-    if (operator === 'plus') {
-      item.amount++
-      item.fullAmount = item.price * item.amount
-    } else if (operator === 'minus') {
-      item.amount--
-      item.fullAmount = item.price * item.amount
+    let prevArray = cartItems
+    let thisItemIndex = prevArray.findIndex(one => one === item)
+    console.log(item.amount, item.fullAmount, item)
+    // console.log(thisItemIndex, thisItem)
 
+
+    if (operator === 'plus') {
+      item.amount = item.amount + 1
+    } else if (operator === 'minus') {
+      item.amount = item.amount - 1
     }
-    console.log(cartItems)
-    setCart(cartItems)
+    item.fullAmount = item.price * item.amount
+
+    prevArray.splice(thisItemIndex, 1, item)
+
+    console.log(prevArray)
+    console.log(item.amount, item.fullAmount, item)
+
+    setCartItems([...prevArray])
+
+    setCart(prevArray)
 
   }
 
-
+  const handleItemRemove = (item) => {
+    let array = cartItems.filter(el => el !== item)
+    setCartItems(array)
+    setCart(array)
+  }
 
   const cartItems2 = cartItems.map((item, id) => (
-    <CartItems item={item} key={id} handleClick={handleClick} setCart={setCart} cartItems={cartItems} />
+    <CartItems item={item} key={id} handleClick={handleClick} handleItemRemove={handleItemRemove} />
   ))
 
+  let getTotalCost = 0
+  cartItems.forEach(item => getTotalCost = getTotalCost + item.fullAmount)
 
   React.useEffect(() => {
     setCartItems(cart)
@@ -42,12 +59,8 @@ const CartPage = () => {
 
 
       <div className="total">
-        <h3>Total:</h3>
+        <h3>Total: {getTotalCost} EUR</h3>
       </div>
-
-
-
-
 
 
       <div className='link-back'>
