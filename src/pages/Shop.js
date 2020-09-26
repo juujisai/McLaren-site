@@ -3,6 +3,9 @@ import ShopItem from '../components/ShopItem'
 import { ShopContext } from '../context/ShopContext'
 import ShopFilters from '../components/ShopFilters'
 import Loader from '../components/Loader'
+import ShopIcon from '../components/ShopIcon'
+
+
 const Shop = () => {
 
   const [shopData, setShopData] = React.useState([])
@@ -11,8 +14,6 @@ const Shop = () => {
   const [featuredItems, setFeaturedItems] = React.useState([])
 
   const { data, filters } = React.useContext(ShopContext)
-
-
 
   // filters 
 
@@ -53,6 +54,7 @@ const Shop = () => {
 
   return (
     <div>
+      <ShopIcon />
       <div className="featured-items">
         <h3>Featured items:</h3>
         {featuredItems.length > 0 && featured}

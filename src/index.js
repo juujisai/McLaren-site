@@ -9,25 +9,28 @@ import ScheduleProvider from './context/ScheduleContext'
 import AllUsersProvider from './context/AllUsersContext'
 import LoggedUserProvider from './context/LoggedUserContext'
 import ShopProvider from './context/ShopContext'
+import CartProvider from './context/CartContext'
 
 ReactDOM.render(
-  <ShopProvider>
-    <LoggedUserProvider>
-      <AllUsersProvider>
-        <ScheduleProvider>
-          <DriverProvider>
-            <ResultsProvider>
-              <GalleryProvider>
-                <ArticleProvider>
-                  <App />
-                </ArticleProvider>
-              </GalleryProvider>
-            </ResultsProvider>
-          </DriverProvider>
-        </ScheduleProvider>
-      </AllUsersProvider>
-    </LoggedUserProvider>
-  </ShopProvider>
+  <CartProvider>
+    <ShopProvider>
+      <LoggedUserProvider>
+        <AllUsersProvider>
+          <ScheduleProvider>
+            <DriverProvider>
+              <ResultsProvider>
+                <GalleryProvider>
+                  <ArticleProvider>
+                    <App />
+                  </ArticleProvider>
+                </GalleryProvider>
+              </ResultsProvider>
+            </DriverProvider>
+          </ScheduleProvider>
+        </AllUsersProvider>
+      </LoggedUserProvider>
+    </ShopProvider>
+  </CartProvider>
   ,
   document.getElementById('root')
 );
