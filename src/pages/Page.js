@@ -13,7 +13,7 @@ import ArticlePage from './ArticlePage'
 import DriverPage from './DriverPage'
 import TrackPage from './TrackPage'
 import ShopItemPage from './ShopItemPage'
-
+import CartPage from './CartPage'
 import AccountPanel from './AccountPanel'
 
 import ErrorPage from './ErrorPage'
@@ -54,6 +54,9 @@ const Page = () => {
       </Route>
       <Route path={`/shop/items/:id`}>
         <ShopItemPage />
+      </Route>
+      <Route path={'/shop/cart'}>
+        <CartPage />
       </Route>
       <ErrorPage />
     </Switch>

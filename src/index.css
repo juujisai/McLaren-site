@@ -1946,7 +1946,6 @@ input[type=range]::-ms-fill-upper {
 
 
 /* item page */
-.item-page-cont {}
 
 .item-name {
   padding: var(--mainPadding);
@@ -2133,3 +2132,69 @@ input[type=range]::-ms-fill-upper {
 }
 
 /* end of cart icon */
+
+
+/* cart page */
+.cart-title {
+  padding: var(--mainPadding);
+  background-color: var(--mainBlue);
+  color: white;
+}
+
+
+.cart-item {
+  /* margin: var(--mainPadding) 0; */
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--mainPadding);
+  background-color: #eee;
+}
+
+.cart-item:nth-of-type(even) {
+  background-color: #ddd;
+
+}
+
+.up-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rest-info {
+  margin-top: var(--mainPadding);
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rest-info div {
+  width: 100%;
+  text-align: center;
+}
+
+
+.item-amount button {
+  border: var(--borderWidth) solid var(--mainBlue);
+  background-color: transparent;
+  outline: none;
+  width: var(--checkboxSize);
+  height: var(--checkboxSize);
+  margin: calc(var(--mainPadding) / 2);
+}
+
+
+.cart-item-img {
+  margin-top: var(--mainPadding);
+  margin-right: var(--mainPadding);
+  width: 30%;
+  border: var(--borderWidth) solid black;
+  background-color: #fff;
+}
+
+.cart-item-img img {
+  width: 100%;
+}
+
+/* end of cart page */
