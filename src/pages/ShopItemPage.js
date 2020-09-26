@@ -67,9 +67,9 @@ const ShopItemPage = () => {
 
     const handleClick = () => {
       setShowAlert(true)
-      data.amount = 1;
-      data.fullAmount = data.amount * price
-      setCart([...cart, data])
+      actualData.amount = 1;
+      actualData.fullAmount = actualData.amount * price
+      setCart([...cart, actualData])
 
       setTimeout(() => {
         setShowAlert(false)
