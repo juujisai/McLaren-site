@@ -124,7 +124,7 @@ class ShopFilters extends React.Component {
 
 
   render() {
-    const { filters, price, category, subCategory, color } = this.state
+    const { filters, price } = this.state
     // console.log(category, subCategory, color, price)
     // console.log(this.state.fullData)
     let categories, subCategories, colors, priceC;

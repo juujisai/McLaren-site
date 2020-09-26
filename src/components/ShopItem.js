@@ -1,12 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Loader from './Loader'
+import AlertBox from './AllertBox'
+import { CartContext } from '../context/CartContext'
 
 import { RiShoppingCartLine } from 'react-icons/ri'
 
 const ShopItem = ({ data }) => {
+  const { cart, setCart } = React.useContext(CartContext)
+  const [showAlert, setShowAlert] = React.useState(false)
   const { id, name, category, price, inStock, img } = data
 
+  const handleClick = () => {
+    setShowAlert(true)
+
+    setCart([...cart, data])
+
+    setTimeout(() => {
+      setShowAlert(false)
+    }, 2000)
+  }
 
   if (typeof id === 'undefined') {
     return <Loader />
@@ -25,10 +38,10 @@ const ShopItem = ({ data }) => {
       <div className="shop-rest">
         <h4>{price} EUR</h4>
 
-        <button className='add-to-cart'><RiShoppingCartLine /></button>
+        <button className='add-to-cart' onClick={handleClick}><RiShoppingCartLine /></button>
       </div>
 
-
+      {showAlert && <div className="result2"><AlertBox type='success' message='Item added to cart' /></div>}
 
     </div>
   );

@@ -5,12 +5,17 @@ import { ShopContext } from '../context/ShopContext'
 import { AiFillStar } from 'react-icons/ai'
 
 import defaultAvatar from '../images/users/default-avatar.png'
-
+import ShopIcon from '../components/ShopIcon'
+import AlertBox from '../components/AllertBox'
+import { CartContext } from '../context/CartContext'
 import Loader from '../components/Loader'
 
 const ShopItemPage = () => {
   const { id } = useParams()
   const { data } = React.useContext(ShopContext)
+
+  const { cart, setCart } = React.useContext(CartContext)
+  const [showAlert, setShowAlert] = React.useState(false)
 
   const actualData = data.find(item => item.id === id)
 
@@ -59,9 +64,21 @@ const ShopItemPage = () => {
     ))
 
 
-    console.log(actualData)
+
+    const handleClick = () => {
+      setShowAlert(true)
+
+      setCart([...cart, data])
+
+      setTimeout(() => {
+        setShowAlert(false)
+      }, 2000)
+    }
+
     return (
       <div className='item-page-cont'>
+        <ShopIcon />
+
         <div className="item-name">
           {name}
           <div className="item-path">
@@ -83,7 +100,7 @@ const ShopItemPage = () => {
             <div className="item-price">
               {price} EUR
             </div>
-            <button className='add-to-cart-item'>Add to cart</button>
+            <button className='add-to-cart-item' onClick={handleClick}>Add to cart</button>
           </div>
 
         </div>
@@ -97,6 +114,9 @@ const ShopItemPage = () => {
         <div className='link-back'>
           <Link className={'btn-link'} to="/shop">Go back to shop</Link>
         </div>
+        {showAlert && <div className="result2"><AlertBox type='success' message='Item added to cart' /></div>}
+
+
       </div>
     );
   }

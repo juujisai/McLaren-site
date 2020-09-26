@@ -15,6 +15,9 @@ const Shop = () => {
 
   const { data, filters } = React.useContext(ShopContext)
 
+
+
+
   // filters 
 
 
