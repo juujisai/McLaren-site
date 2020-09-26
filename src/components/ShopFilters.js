@@ -49,21 +49,60 @@ class ShopFilters extends React.Component {
 
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevState.category, this.state.category)
+    // console.log(prevState.category, this.state.category)
     if (prevState.category !== this.state.category || prevState.subCategory !== this.state.subCategory || prevState.color !== this.state.color || prevState.price !== this.state.price) {
-      console.log("updating")
+      // console.log("updating")
 
 
       let fullDataNewArray = this.fullData
       let dataArray = []
+      let catArray = []
+      let subCatArray = []
+      let colArray = []
+      // main filter
 
-      this.state.category.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
-      this.state.subCategory.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.subcategory === item)])
-      this.state.color.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.color.includes(item))])
+      // if (dataArray.length === 0) {
+      //   this.state.category.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
+      // } else {
+      //   this.state.category.forEach(item => dataArray = [...dataArray.filter(item2 => item2.category === item)])
+      // }
+
+      // if (dataArray.length === 0) {
+      //   this.state.subCategory.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.subcategory === item)])
+      // } else {
+      //   this.state.subCategory.forEach(item => dataArray = [...fullDataNewArray.filter(item2 => item2.subcategory === item)])
+      // }
+
+      // if (dataArray.length === 0) {
+      //   this.state.color.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.color.includes(item))])
+      // } else {
+      //   this.state.color.forEach(item => dataArray = [...dataArray, ...dataArray.filter(item2 => item2.color.includes(item))])
+      // }
+
+      this.state.category.forEach(item => catArray = [...catArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
+      catArray.length === 0 ? dataArray = fullDataNewArray : dataArray = catArray
+
+      this.state.subCategory.forEach(item => subCatArray = [...subCatArray, ...dataArray.filter(item2 => item2.subcategory === item)])
+
+      subCatArray.length === 0 ? dataArray = [...dataArray] : dataArray = subCatArray
+
+      this.state.color.forEach(item => colArray = [...colArray, ...dataArray.filter(item2 => item2.color.includes(item))])
+
+      colArray.length === 0 ? dataArray = [...dataArray] : dataArray = colArray
+
       dataArray.length === 0 ? dataArray = fullDataNewArray : dataArray = [...dataArray]
+
       dataArray = dataArray.filter(item => item.price <= this.state.price)
 
-      // console.log(dataArray)
+      dataArray = [...new Set(dataArray)]
+
+      dataArray.sort(function (a, b) {
+        if (a.category > b.category) return -1
+        if (a.category < b.category) return 1
+        if (a.category === b.category) return 0
+      })
+
+
       this.settingData(dataArray)
       this.setState({ newData: dataArray })
 
@@ -86,7 +125,7 @@ class ShopFilters extends React.Component {
 
   render() {
     const { filters, price, category, subCategory, color } = this.state
-    console.log(category, subCategory, color, price)
+    // console.log(category, subCategory, color, price)
     // console.log(this.state.fullData)
     let categories, subCategories, colors, priceC;
 
