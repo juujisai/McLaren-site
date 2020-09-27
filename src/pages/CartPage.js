@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const CartPage = () => {
   const { cart, setCart } = React.useContext(CartContext)
   const [cartItems, setCartItems] = React.useState(cart)
-
+  const [buttonDisable, setButtonDisable] = React.useState(false)
 
 
   const handleClick = (operator, item) => {
@@ -23,10 +23,9 @@ const CartPage = () => {
     }
     item.fullAmount = item.price * item.amount
 
-    prevArray.splice(thisItemIndex, 1, item)
+    item.amount >= item.inStock ? setButtonDisable(true) : setButtonDisable(false)
 
-    // console.log(prevArray)
-    // console.log(item.amount, item.fullAmount, item)
+    item.amount <= 0 ? prevArray = cartItems.filter(el => el !== item) : prevArray.splice(thisItemIndex, 1, item)
 
     setCartItems([...prevArray])
 
@@ -41,7 +40,7 @@ const CartPage = () => {
   }
 
   const cartItems2 = cartItems.map((item, id) => (
-    <CartItems item={item} key={id} handleClick={handleClick} handleItemRemove={handleItemRemove} />
+    <CartItems item={item} key={id} handleClick={handleClick} handleItemRemove={handleItemRemove} buttonDisable={buttonDisable} setButtonDisable={setButtonDisable} />
   ))
 
   let getTotalCost = 0
