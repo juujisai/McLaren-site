@@ -2,12 +2,14 @@ import React from 'react';
 import { CartContext } from '../context/CartContext'
 import CartItems from '../components/CartItems'
 import { Link } from 'react-router-dom'
+import AlertBox from '../components/AllertBox'
+
 
 const CartPage = () => {
   const { cart, setCart } = React.useContext(CartContext)
   const [cartItems, setCartItems] = React.useState(cart)
   const [buttonDisable, setButtonDisable] = React.useState(false)
-
+  const [showAlert, setShowAlert] = React.useState(false)
 
   const handleClick = (operator, item) => {
     let prevArray = cartItems
@@ -25,7 +27,17 @@ const CartPage = () => {
 
     item.amount >= item.inStock ? setButtonDisable(true) : setButtonDisable(false)
 
-    item.amount <= 0 ? prevArray = cartItems.filter(el => el !== item) : prevArray.splice(thisItemIndex, 1, item)
+
+
+    if (item.amount <= 0) {
+      prevArray = cartItems.filter(el => el !== item)
+      setShowAlert(true)
+      setTimeout(() => { setShowAlert(false) }, 2000)
+
+    } else {
+      prevArray.splice(thisItemIndex, 1, item)
+    }
+
 
     setCartItems([...prevArray])
 
@@ -35,6 +47,10 @@ const CartPage = () => {
 
   const handleItemRemove = (item) => {
     let array = cartItems.filter(el => el !== item)
+    setShowAlert(true)
+
+    setTimeout(() => { setShowAlert(false) }, 2000)
+
     setCartItems(array)
     setCart(array)
   }
@@ -59,6 +75,7 @@ const CartPage = () => {
       {cartItems.length !== 0 && <div className="total"><h3>Total: {getTotalCost} EUR</h3></div>}
 
 
+      {showAlert && <div className="result2"><AlertBox type='danger' message='Item removed from cart' /></div>}
 
       <div className='link-back'>
         <Link className={'btn-link'} to="/shop">Go back to shop</Link>
