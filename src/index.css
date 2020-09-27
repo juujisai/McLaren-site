@@ -2294,4 +2294,19 @@ input[type=range]::-ms-fill-upper {
 
 }
 
+.save-address-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-address {
+
+  background-color: transparent;
+  outline: none;
+  padding: 5px 20px;
+  border: 2px solid var(--mainOrange);
+  text-decoration: none;
+  font-family: var(--fontMain);
+}
+
 /* end of checkout page */

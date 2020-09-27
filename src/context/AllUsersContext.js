@@ -15,7 +15,11 @@ const AllUsersProvider = ({ children }) => {
     // just to test loading component
 
     setTimeout(function () {
-      setUserList(pseudoDatabase)
+
+      localStorage.getItem('userList') === null ? setUserList(pseudoDatabase) : setUserList(JSON.parse(localStorage.getItem('userList')))
+
+      console.log(userList)
+
       setLoading(false)
     }, 1000)
 
@@ -24,7 +28,7 @@ const AllUsersProvider = ({ children }) => {
   return (
     <AllUsersContext.Provider
       value={{
-        userList, loading
+        userList, loading, setUserList
       }}>
       {children}
     </AllUsersContext.Provider>

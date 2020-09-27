@@ -1,6 +1,9 @@
 import React from 'react';
 import { CartContext } from '../context/CartContext'
 import { LoggedUserContext } from '../context/LoggedUserContext'
+import { AllUsersContext } from '../context/AllUsersContext'
+
+
 import Loader from '../components/Loader'
 import CartItemsShort from '../components/CartItemsShort'
 import { Link } from 'react-router-dom'
@@ -9,6 +12,7 @@ import { Link } from 'react-router-dom'
 const Checkout = () => {
   const { cart } = React.useContext(CartContext)
   const { loggedUser, user } = React.useContext(LoggedUserContext)
+  // const { userList, setUserList } = React.useContext(AllUsersContext)
 
   const [userAddress, setUserAddress] = React.useState({})
 
@@ -18,15 +22,23 @@ const Checkout = () => {
   ))
 
 
-  React.useEffect(() => {
-    typeof loggedUser !== 'undefined' && setUserAddress({ name: loggedUser.userFullName, country: loggedUser.place.country, city: loggedUser.place.city, address: loggedUser.place.address })
-  }, [loggedUser])
+  const handleChange = (e) => {
+    let name = e.target.name
+    setUserAddress({ [name]: e.target.value })
 
+  }
+
+
+
+  // React.useEffect(() => {
+  //   typeof loggedUser !== 'undefined' && setUserAddress({ name: loggedUser.userFullName, country: loggedUser.place.country, city: loggedUser.place.city, address: loggedUser.place.address })
+  // }, [loggedUser])
+
+  console.log(loggedUser)
 
   if (typeof loggedUser === 'undefined' || typeof userAddress === 'undefined') {
     return <Loader />
   }
-
 
   return (
     <div className="checkout-page">
@@ -50,25 +62,27 @@ const Checkout = () => {
 
           <label>
             Full name:
-            <input type="text" value={userAddress.name} />
+            <input name='name' type="text" value={userAddress.name} onChange={handleChange} />
           </label>
           <label>
             Country
-            <input type="text" value={userAddress.country} />
+            <input name='country' type="text" value={userAddress.country} onChange={handleChange} />
           </label>
           <label>
             City:
-            <input type="text" value={userAddress.city} />
+            <input name='city' type="text" value={userAddress.city} onChange={handleChange} />
           </label>
           <label>
             Address:
-            <input type="text" value={userAddress.address} />
+            <input name='address' type="text" value={userAddress.address} onChange={handleChange} />
           </label>
           <label>
             I agree with Terms of Service:
             <input type="checkbox" />
           </label>
-          <button className="save-address">Save address</button>
+          <div className='save-address-div'>
+            <button className="save-address">Save address</button>
+          </div>
         </form>
       </div>
       <div className="continue-cart finish-cart"><Link to='/shop/cart'>Buy products</Link> </div>
