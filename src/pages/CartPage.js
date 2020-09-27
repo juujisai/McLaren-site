@@ -4,12 +4,15 @@ import CartItems from '../components/CartItems'
 import { Link } from 'react-router-dom'
 import AlertBox from '../components/AllertBox'
 
+import { LoggedUserContext } from '../context/LoggedUserContext'
 
 const CartPage = () => {
   const { cart, setCart } = React.useContext(CartContext)
   const [cartItems, setCartItems] = React.useState(cart)
   const [buttonDisable, setButtonDisable] = React.useState(false)
   const [showAlert, setShowAlert] = React.useState(false)
+
+  const { loggedUser } = React.useContext(LoggedUserContext)
 
   const handleClick = (operator, item) => {
     let prevArray = cartItems
@@ -73,7 +76,7 @@ const CartPage = () => {
 
 
       {cartItems.length !== 0 && <div className="total"><h3>Total: {getTotalCost} EUR</h3></div>}
-
+      <div className="continue-cart">{loggedUser ? <Link to='/checkout'>Continue</Link> : <Link to='/login'>Continue</Link>}</div>
 
       {showAlert && <div className="result2"><AlertBox type='danger' message='Item removed from cart' /></div>}
 

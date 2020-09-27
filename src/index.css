@@ -2206,4 +2206,23 @@ input[type=range]::-ms-fill-upper {
 
 }
 
+.total,
+.continue-cart {
+  padding-right: var(--mainPadding);
+  padding-top: var(--mainPadding);
+  text-align: right;
+}
+
+.continue-cart {
+  margin-bottom: var(--mainPadding);
+}
+
+.continue-cart a {
+  padding: 5px 20px;
+  border: 2px solid var(--mainBlue);
+  text-decoration: none;
+  color: var(--mainBlue);
+
+}
+
 /* end of cart page */

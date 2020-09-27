@@ -15,7 +15,7 @@ import TrackPage from './TrackPage'
 import ShopItemPage from './ShopItemPage'
 import CartPage from './CartPage'
 import AccountPanel from './AccountPanel'
-
+import Checkout from './Checkout'
 import ErrorPage from './ErrorPage'
 import { LoggedUserContext } from '../context/LoggedUserContext'
 
@@ -41,7 +41,9 @@ const Page = () => {
       <Route path={`/account`}>
         {/* <AccountPanel /> */}
         {!loggedUser ? <Redirect to="/login" /> : <AccountPanel />}
-
+      </Route>
+      <Route path={'/checkout'}>
+        {!loggedUser ? <Redirect to="/login" /> : <Checkout />}
       </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />
@@ -58,6 +60,7 @@ const Page = () => {
       <Route path={'/shop/cart'}>
         <CartPage />
       </Route>
+
       <ErrorPage />
     </Switch>
 
