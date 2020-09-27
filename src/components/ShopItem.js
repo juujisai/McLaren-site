@@ -9,7 +9,7 @@ import { RiShoppingCartLine } from 'react-icons/ri'
 const ShopItem = ({ data }) => {
   const { cart, setCart } = React.useContext(CartContext)
   const [showAlert, setShowAlert] = React.useState(false)
-  const { id, name, category, price, inStock, img } = data
+  const { id, name, category, price, img } = data
 
   const handleClick = () => {
     setShowAlert(true)

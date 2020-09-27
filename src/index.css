@@ -2226,3 +2226,72 @@ input[type=range]::-ms-fill-upper {
 }
 
 /* end of cart page */
+
+
+/* checkout page */
+
+.item-list-short {
+  width: 90%;
+  margin: var(--mainPadding) auto;
+  overflow: hidden;
+
+  box-shadow: 2px 2px gray;
+
+}
+
+.item-list-table {
+  width: 100%;
+  font-size: 0.75em;
+}
+
+.table-header {
+  background-color: #ddd;
+}
+
+.table-image,
+.table-name,
+.table-quantity,
+.table-price {
+  padding: 5px;
+  width: 20%;
+  text-align: center;
+
+  box-shadow: 2px 2px gray;
+}
+
+.table-image img {
+  width: 100%;
+}
+
+.table-name {
+  width: 40%
+}
+
+.your-order {
+  font-size: 1em;
+  margin: var(--mainPadding);
+}
+
+
+.order-user-place {
+  width: 90%;
+  margin: var(--mainPadding) auto;
+
+}
+
+
+
+.order-user-place label {
+  display: flex;
+  margin: var(--mainPadding) 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-user-place input {
+  padding-right: 10px;
+  text-align: right;
+
+}
+
+/* end of checkout page */

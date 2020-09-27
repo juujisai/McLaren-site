@@ -23,6 +23,9 @@ import { LoggedUserContext } from '../context/LoggedUserContext'
 const Page = () => {
   const { loggedUser } = React.useContext(LoggedUserContext)
 
+
+  const loggedUserFromLocalStorage = JSON.parse(localStorage.getItem('cart'))
+
   const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />]
 
   const pages = navData.map((item, id) => (
@@ -43,7 +46,7 @@ const Page = () => {
         {!loggedUser ? <Redirect to="/login" /> : <AccountPanel />}
       </Route>
       <Route path={'/checkout'}>
-        {!loggedUser ? <Redirect to="/login" /> : <Checkout />}
+        {!loggedUserFromLocalStorage ? <Redirect to="/login" /> : <Checkout />}
       </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />

@@ -20,7 +20,7 @@ const ShopItemPage = () => {
   const actualData = data.find(item => item.id === id)
 
   if (typeof actualData !== 'undefined') {
-    const { name, category, subcategory, featured, color, price, inStock, img, description, comments } = actualData
+    const { name, category, subcategory, featured, color, price, img, description, comments } = actualData
 
     const colors = color.map((item, id) => (
       <span className='color-box' style={{ backgroundColor: item }} key={id}></span >
