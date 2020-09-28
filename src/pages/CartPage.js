@@ -43,6 +43,7 @@ const CartPage = () => {
 
 
     setCartItems([...prevArray])
+    localStorage.setItem('cart', JSON.stringify(prevArray))
 
     setCart(prevArray)
 
@@ -56,6 +57,8 @@ const CartPage = () => {
 
     setCartItems(array)
     setCart(array)
+    localStorage.setItem('cart', JSON.stringify(array))
+
   }
 
   const cartItems2 = cartItems.map((item, id) => (

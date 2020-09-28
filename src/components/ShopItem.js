@@ -13,11 +13,12 @@ const ShopItem = ({ data }) => {
 
   const handleClick = () => {
     setShowAlert(true)
+    console.log(cart, data)
+    if (cart.filter(item => item.id === data.id).length > 0) {
 
-    if (cart.filter(item => item === data).length > 0) {
-
-      const idIfExist = cart.findIndex(item => item === data)
-      const itemIfExist = cart.find(item => item === data)
+      // console.log('already in cart')
+      const idIfExist = cart.findIndex(item => item.id === data.id)
+      const itemIfExist = cart.find(item => item.id === data.id)
       itemIfExist.amount = itemIfExist.amount + 1
       let array = [...cart]
       array.splice(idIfExist, 1, itemIfExist)
@@ -25,11 +26,17 @@ const ShopItem = ({ data }) => {
       data.fullAmount = data.amount * price
 
       setCart(array)
+      localStorage.setItem('cart', JSON.stringify(array))
+
     } else {
+      // console.log('new in cart')
+
       data.amount = 1;
       data.fullAmount = data.amount * price
 
       setCart([...cart, data])
+
+      localStorage.setItem('cart', JSON.stringify([...cart, data]))
     }
 
 

@@ -18,12 +18,12 @@ const AllUsersProvider = ({ children }) => {
 
       localStorage.getItem('userList') === null ? setUserList(pseudoDatabase) : setUserList(JSON.parse(localStorage.getItem('userList')))
 
-      console.log(userList)
+      // console.log(userList)
 
       setLoading(false)
     }, 1000)
 
-  }, [])
+  }, [userList])
 
   return (
     <AllUsersContext.Provider

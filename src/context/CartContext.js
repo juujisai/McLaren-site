@@ -6,7 +6,15 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('cart')))
 
   React.useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
+
+    if (cart === null) {
+      setCart([])
+
+      // console.log('true')
+    }
+
+
+
     // console.log(cart)
   }, [cart])
 
