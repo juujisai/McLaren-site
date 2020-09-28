@@ -20,10 +20,11 @@ const ShopItem = ({ data }) => {
       const idIfExist = cart.findIndex(item => item.id === data.id)
       const itemIfExist = cart.find(item => item.id === data.id)
       itemIfExist.amount = itemIfExist.amount + 1
+      itemIfExist.fullAmount = itemIfExist.amount * price
+
       let array = [...cart]
       array.splice(idIfExist, 1, itemIfExist)
       console.log(array)
-      data.fullAmount = data.amount * price
 
       setCart(array)
       localStorage.setItem('cart', JSON.stringify(array))
