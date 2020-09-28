@@ -13,9 +13,27 @@ const ShopItem = ({ data }) => {
 
   const handleClick = () => {
     setShowAlert(true)
-    data.amount = 1;
-    data.fullAmount = data.amount * price
-    setCart([...cart, data])
+
+    if (cart.filter(item => item === data).length > 0) {
+
+      const idIfExist = cart.findIndex(item => item === data)
+      const itemIfExist = cart.find(item => item === data)
+      itemIfExist.amount = itemIfExist.amount + 1
+      let array = [...cart]
+      array.splice(idIfExist, 1, itemIfExist)
+      console.log(array)
+      data.fullAmount = data.amount * price
+
+      setCart(array)
+    } else {
+      data.amount = 1;
+      data.fullAmount = data.amount * price
+
+      setCart([...cart, data])
+    }
+
+
+
 
     setTimeout(() => {
       setShowAlert(false)

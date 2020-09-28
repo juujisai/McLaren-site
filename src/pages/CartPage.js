@@ -76,7 +76,7 @@ const CartPage = () => {
 
 
       {cartItems.length !== 0 && <div className="total"><h3>Total: {getTotalCost} EUR</h3></div>}
-      <div className="continue-cart">{loggedUser ? <Link to='/checkout'>Continue</Link> : <Link to='/login'>Continue</Link>}</div>
+      {  cart.length > 0 && <div className="continue-cart">{loggedUser ? <Link to='/checkout'>Continue</Link> : <Link to='/login'>Continue</Link>}</div>}
 
       {showAlert && <div className="result2"><AlertBox type='danger' message='Item removed from cart' /></div>}
 
