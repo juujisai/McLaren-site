@@ -6,19 +6,21 @@ export const AllUsersContext = React.createContext()
 
 const AllUsersProvider = ({ children }) => {
 
-  const [userList, setUserList] = React.useState([])
+  const [userList, setUserList] = React.useState(JSON.parse(localStorage.getItem('userList')))
   const [loading, setLoading] = React.useState([])
 
   React.useEffect(() => {
     setLoading(true)
-
+    console.log(userList)
     // just to test loading component
+    if (userList === null) {
+      setUserList(pseudoDatabase)
 
+      // console.log('true')
+    }
     setTimeout(function () {
 
-      localStorage.getItem('userList') === null ? setUserList(pseudoDatabase) : setUserList(JSON.parse(localStorage.getItem('userList')))
 
-      // console.log(userList)
 
       setLoading(false)
     }, 1000)

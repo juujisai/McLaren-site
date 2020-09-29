@@ -1,5 +1,6 @@
 import React from 'react';
-import pseudoDataBase from '../data/pseudoDatabase'
+// import pseudoDataBase from '../data/pseudoDatabase'
+import { AllUsersContext } from '../context/AllUsersContext'
 
 export const LoggedUserContext = React.createContext()
 
@@ -9,24 +10,27 @@ const LoggedUserProvider = ({ children }) => {
 
   const [loggedUser, setLoggedUser] = React.useState()
 
+  const { userList } = React.useContext(AllUsersContext)
+
+
   React.useEffect(() => {
     if (localStorage.getItem('user')) {
 
       setUser(JSON.parse(localStorage.getItem('user')))
     }
-    let u = pseudoDataBase.find(one => {
-      // console.log(one.userId, user)
-      return one.userId === user
-    })
-    setLoggedUser(u)
-  }, [user, loggedUser])
+    if (typeof user !== 'undefined') {
+      //   if (user !== null) 
+      setLoggedUser(userList.find(one => one.userId === user))
+    }
+    console.log(user)
+  }, [user, loggedUser, userList])
 
   return (
     <LoggedUserContext.Provider
       value={{
         setUser,
         user,
-        loggedUser
+        loggedUser, setLoggedUser
       }}>
       {children}
     </LoggedUserContext.Provider>

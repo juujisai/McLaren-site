@@ -14,8 +14,8 @@ import CartProvider from './context/CartContext'
 ReactDOM.render(
   <CartProvider>
     <ShopProvider>
-      <LoggedUserProvider>
-        <AllUsersProvider>
+      <AllUsersProvider>
+        <LoggedUserProvider>
           <ScheduleProvider>
             <DriverProvider>
               <ResultsProvider>
@@ -27,8 +27,8 @@ ReactDOM.render(
               </ResultsProvider>
             </DriverProvider>
           </ScheduleProvider>
-        </AllUsersProvider>
-      </LoggedUserProvider>
+        </LoggedUserProvider>
+      </AllUsersProvider>
     </ShopProvider>
   </CartProvider>
   ,
