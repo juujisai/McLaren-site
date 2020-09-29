@@ -6,8 +6,9 @@ import { AllUsersContext } from '../context/AllUsersContext'
 
 import Loader from '../components/Loader'
 import CartItemsShort from '../components/CartItemsShort'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+import PurchaseCompletedPopup from '../components/PurchaseCompletedPopup';
 
 const Checkout = () => {
   const { cart, setCart } = React.useContext(CartContext)
@@ -20,6 +21,7 @@ const Checkout = () => {
   const [address, setAddress] = React.useState('')
   const [check, setChecked] = React.useState(false)
 
+  const [showFinishPopup, setShowFinishPopup] = React.useState(false)
 
   const cartList = cart.map((item, id) => (
     <CartItemsShort item={item} key={id} />
@@ -94,6 +96,8 @@ const Checkout = () => {
       localStorage.setItem('userList', JSON.stringify(array))
       setLoggedUser(userFromAllUsers)
 
+      setShowFinishPopup(true)
+
       setCart([])
       setUserName('')
       setCountry('')
@@ -107,6 +111,7 @@ const Checkout = () => {
 
   React.useEffect(() => {
     if (typeof loggedUser !== 'undefined') {
+      setShowFinishPopup(false)
 
       setChecked(false)
     }
@@ -165,9 +170,18 @@ const Checkout = () => {
           </div>
         </form>
       </div>
+
+
+
+
       <div className="continue-cart finish-cart" ><button onClick={handleBuyProducts}>Buy products</button></div>
 
       <div className="continue-cart"><Link to='/shop/cart'>Go back to cart</Link> </div>
+
+
+      {showFinishPopup && <div className='white-bg'></div>}
+
+      {showFinishPopup && <div className="purchase-completed"><PurchaseCompletedPopup /></div>}
 
     </div>
   );

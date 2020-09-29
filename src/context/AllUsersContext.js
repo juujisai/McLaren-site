@@ -11,7 +11,6 @@ const AllUsersProvider = ({ children }) => {
 
   React.useEffect(() => {
     setLoading(true)
-    console.log(userList)
     // just to test loading component
     if (userList === null) {
       setUserList(pseudoDatabase)

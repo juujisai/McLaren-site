@@ -2310,4 +2310,59 @@ input[type=range]::-ms-fill-upper {
   font-family: var(--fontMain);
 }
 
+
+.products-bought {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: var(--mainPadding) 0;
+  /* height: 70vh; */
+  border-top: var(--borderWidth) solid var(--mainOrange);
+  border-bottom: var(--borderWidth) solid var(--mainOrange);
+  background-color: #fff;
+}
+
+.products-bought h2 {
+  font-size: 1em;
+}
+
+.ok-sign {
+  width: 100%;
+  text-align: center;
+  padding: var(--mainPadding) 0;
+
+}
+
+.ok-sign svg {
+  width: 50%;
+  /* stroke-dasharray: 0;
+  stroke-dashoffset: 0 */
+}
+
+
+@keyframes svgAnimate {
+  to {
+    /* stroke-dasharray: 0; */
+    stroke-dashoffset: 0
+  }
+
+}
+
+.white-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+
+
 /* end of checkout page */

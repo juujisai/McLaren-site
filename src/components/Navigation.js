@@ -16,7 +16,7 @@ const Navigation = () => {
 
 
   const navi = navData.map((nav, id) => (
-    <li key={id}>
+    <li key={id} onClick={handleClick}>
       <NavLink to={nav.path} exact>{nav.name}</NavLink>
     </li>
   ))
@@ -28,7 +28,7 @@ const Navigation = () => {
         <button className='btn-menu' onClick={handleClick}><ArrowRight /></button>
         <ul>
           {navi}
-          <li>{loggedUser ? <NavLink to={'/account'} exact>{'my account'}</NavLink> : <NavLink to={'/login'} exact>{'login'}</NavLink>}</li>
+          <li onClick={handleClick}>{loggedUser ? <NavLink to={'/account'} exact>{'my account'}</NavLink> : <NavLink to={'/login'} exact>{'login'}</NavLink>}</li>
         </ul>
       </nav>
     </>

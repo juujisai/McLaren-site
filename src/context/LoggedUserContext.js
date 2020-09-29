@@ -22,7 +22,6 @@ const LoggedUserProvider = ({ children }) => {
       //   if (user !== null) 
       setLoggedUser(userList.find(one => one.userId === user))
     }
-    console.log(user)
   }, [user, loggedUser, userList])
 
   return (
