@@ -6,11 +6,11 @@ import { AllUsersContext } from '../context/AllUsersContext'
 
 import Loader from '../components/Loader'
 import CartItemsShort from '../components/CartItemsShort'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 const Checkout = () => {
-  const { cart } = React.useContext(CartContext)
+  const { cart, setCart } = React.useContext(CartContext)
   const { loggedUser, setLoggedUser } = React.useContext(LoggedUserContext)
   const { userList, setUserList } = React.useContext(AllUsersContext)
 
@@ -40,7 +40,7 @@ const Checkout = () => {
       setAddress(value)
     }
     if (e.target.type === 'checkbox') {
-      setChecked(true)
+      setChecked(!check)
     }
   }
 
@@ -81,13 +81,23 @@ const Checkout = () => {
 
   const handleBuyProducts = (e) => {
     e.preventDefault()
-    if (userName !== '' && country !== '' && city !== '' && address !== '') {
+    if (userName !== '' && country !== '' && city !== '' && address !== '' && check) {
+      let letIdFromAllUsers = userList.findIndex(item => item.userId === loggedUser.userId)
+      let userFromAllUsers = userList.find(item => item.userId === loggedUser.userId)
+
+      userFromAllUsers.shopHistory = [...userFromAllUsers.shopHistory, cart]
+
+      let array = userList
+      array.splice(letIdFromAllUsers, 1, userFromAllUsers)
+
+      setUserList(array)
+      localStorage.setItem('userList', JSON.stringify(array))
+      setLoggedUser(userFromAllUsers)
+
+      setCart([])
       setUserName('')
-
       setCountry('')
-
       setCity('')
-
       setAddress('')
 
       console.log('items bought')
