@@ -11,7 +11,8 @@ export default [
         address: ''
       }
     ],
-    shopHistory: []
+    shopHistory: [],
+    dateOfPurchase: []
   },
 
   {
@@ -26,6 +27,7 @@ export default [
         address: ''
       }
     ],
-    shopHistory: []
+    shopHistory: [],
+    dateOfPurchase: []
   },
 ]

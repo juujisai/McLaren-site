@@ -25,7 +25,7 @@ const Page = () => {
 
 
   const loggedUserFromLocalStorage = JSON.parse(localStorage.getItem('cart'))
-
+  console.log(loggedUserFromLocalStorage)
   const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />]
 
   const pages = navData.map((item, id) => (
@@ -46,7 +46,7 @@ const Page = () => {
         {!loggedUser ? <Redirect to="/login" /> : <AccountPanel />}
       </Route>
       <Route path={'/checkout'}>
-        {!loggedUserFromLocalStorage ? <Redirect to="/login" /> : <Checkout />}
+        {!loggedUser ? <Redirect to="/login" /> : <Checkout />}
       </Route>
       <Route path={`/article/:id`} >
         <ArticlePage />

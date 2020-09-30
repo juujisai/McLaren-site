@@ -10,7 +10,7 @@ const AccountPanel = () => {
   const [showInfo, setShowInfo] = React.useState(false)
   const [showHistory, setShowHistory] = React.useState(false)
 
-  const { shopHistory } = loggedUser
+  const { shopHistory, dateOfPurchase } = loggedUser
 
 
   const handleLogout = () => {
@@ -42,25 +42,40 @@ const AccountPanel = () => {
 
   const showHistoryCont = (
     <div>
-      {shopHistory.map((history, key) => (
-        <div className="shop-history" key={key}>
-          <table className='item-list-table'>
-            <tbody>
-              <tr className='table-header'>
-                <td className='table-image'>Image</td>
-                <td className='table-name'>Name</td>
-                <td className='table-quantity'>Quantity</td>
-                <td className='table-price'>Full price</td>
-              </tr>
+      {shopHistory.reverse().map((history, id) => {
+        const time = new Date(dateOfPurchase.reverse()[id])
+        return (
+          <div className="shop-history" key={id}>
+            <h4>Date of purchase:</h4>
+            <div>
+              <span>{time.getDate()}</span>
+              <span>{time.toLocaleString('en-EN', { month: 'long' }).toLowerCase()}</span>
+              <span>{time.getFullYear()}</span>
+(
+            <span>{time.getHours().toLocaleString().length === 1 ? `0${time.getHours()}` : time.getHours()}:</span>
+              <span>{time.getMinutes().toLocaleString().length === 1 ? `0${time.getMinutes()}` : time.getMinutes()}:</span>
+              <span>{time.getSeconds().toLocaleString().length === 1 ? `0${time.getSeconds()}` : time.getSeconds()}</span>
+)
+
+          </div>
+            <table className='item-list-table'>
+              <tbody>
+                <tr className='table-header'>
+                  <td className='table-image'>Image</td>
+                  <td className='table-name'>Name</td>
+                  <td className='table-quantity'>Quantity</td>
+                  <td className='table-price'>Full price</td>
+                </tr>
 
 
-              {history.map((item, key) => (
-                <CartItemsShort item={item} key={key} />
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
+                {history.map((item, key) => (
+                  <CartItemsShort item={item} key={key} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      })}
     </div>
   )
 
