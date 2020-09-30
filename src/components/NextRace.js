@@ -212,7 +212,7 @@ class NextRace extends React.Component {
           <h4>date: {raceDate} {month} {2020}</h4>
 
           <div className="time-to-next">
-            <p>{days > 0 && <span className="next-days">{days} days </span>}<span className="next-hours">{hours.toString().length === 1 ? `0${hours}` : `${hours}`}</span> : <span className="next-minutes">{minutes.toString().length === 1 ? `0${minutes}` : `${minutes}`}</span> : <span className="next-seconds">{seconds.toString().length === 1 ? `0${seconds}` : `${seconds}`}</span></p>
+            <p>{days > 0 && <span className="next-days">{days} days </span>}<span className="next-hours">{hours.toString().length === 1 ? `0${hours - 1}` : `${hours - 1}`}</span> : <span className="next-minutes">{minutes.toString().length === 1 ? `0${minutes}` : `${minutes}`}</span> : <span className="next-seconds">{seconds.toString().length === 1 ? `0${seconds}` : `${seconds}`}</span></p>
           </div>
 
 
