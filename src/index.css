@@ -208,19 +208,21 @@ header .title {
   text-align: right;
   border: none;
   color: var(--mainOrange);
+  font-size: 2em;
+
   z-index: 2;
 }
 
 
 .menu {
   position: fixed;
-  top: 2vh;
+  top: 5vh;
   right: 2vh;
+
   background-color: transparent;
   z-index: 25;
   opacity: 1;
   transition: var(--mainTransition);
-
 }
 
 
@@ -291,7 +293,7 @@ header .title {
 
 .border-sign {
   position: absolute;
-  top: -1%;
+  top: 0;
   left: 10%;
   padding: var(--signPadding);
   background-color: #fff;
@@ -337,6 +339,7 @@ header .title {
 .single-article-title,
 .single-article-par,
 .single-article-desc {
+  width: 100%;
   /* width: var(--articleWidth); */
   padding: var(--mainPadding) 10px;
 }
@@ -649,7 +652,7 @@ footer {
   top: 50%;
   transform: var(--transformCenterObject);
   height: 100%;
-  filter: drop-shadow(-38px -13px 1px #223);
+  filter: drop-shadow(-38px 5px 1px #223);
 }
 
 .result-data {
@@ -788,13 +791,15 @@ footer {
   width: 100%;
 
   height: 80vh;
+  overflow: hidden;
 }
 
 .image-img1 {
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
+  /* height: 100%; */
+  width: 100%;
 }
 
 
@@ -949,6 +954,8 @@ footer {
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
   filter: brightness(.5);
 }
 
@@ -1987,11 +1994,17 @@ input[type=range]::-ms-fill-upper {
 
 .item-image {
   width: 50%;
+  height: 100%;
   border: var(--borderWidth) solid black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-image img {
-  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .item-info {
@@ -2443,3 +2456,259 @@ input[type=range]::-ms-fill-upper {
 }
 
 /* end of account page */
+
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+/* (orientation: portrait) and */
+@media (min-width: 400px) {
+  .logo {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .single-article-title,
+  .single-article-par,
+  .single-article-desc {
+    padding: var(--mainPadding) 20px;
+  }
+
+  .single-article-title {
+    margin-bottom: var(--mainPadding);
+  }
+
+  .social {
+    padding: var(--mainPadding);
+  }
+
+
+  .track-image {
+    height: 100%;
+  }
+
+
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+
+@media (min-width: 500px) {
+  /* account page */
+
+
+
+  .account-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #ddd;
+
+  }
+
+  .info-account-panel {
+    margin: var(--mainPadding) 0;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-account-content {
+    padding-left: 5%;
+    width: 70%;
+    background-color: #fff;
+  }
+
+  .info-account-panel ul {
+    width: 100%;
+  }
+
+  .info-account-panel li {
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .info-account-panel button {
+    display: block;
+    width: 90%;
+    margin: var(--mainPadding) auto;
+    background-color: #ccc;
+    border: none;
+    border-left: 10px solid transparent;
+  }
+
+  .info-account-panel button.active {
+    border-color: var(--mainBlue)
+  }
+
+
+
+  .account-panel-data p {
+    width: 80%;
+  }
+
+
+}
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 700px) {
+
+  .logo {
+    width: 50%;
+  }
+
+  .article {
+    width: 70%;
+
+  }
+
+  .social {
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 30vh;
+
+  }
+
+  .social h3 {
+    width: 100%;
+  }
+
+  .socials {
+    width: 40%;
+
+  }
+
+  .socials:nth-of-type(1) {
+    margin-top: calc(var(--mainPadding) / 2);
+  }
+
+
+  .driver-result {
+    margin: 0 auto var(--mainPadding);
+    width: 80%;
+  }
+
+  .driver-short {
+    padding: 10vh 10vh;
+  }
+
+  .about-driver {
+    margin: var(--mainPadding) 20%;
+  }
+
+  .driver-socials {
+    margin: 0 10%;
+  }
+
+
+  .info-page p,
+  .photos {
+    margin: var(--mainPadding) 10%;
+  }
+
+  .schedule {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .single-race {
+    width: 45%;
+  }
+
+  .next-race {
+    width: 100%;
+    margin-bottom: calc(var(--mainPadding) * 2);
+  }
+
+  .race-date-page {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+
+  .session-race {
+    margin-left: 10%;
+  }
+
+  .stats p {
+    margin: var(--mainPadding) 20%;
+  }
+
+  .track-info p {
+    margin: var(--mainPadding) 10%;
+  }
+
+  .game-lights {
+    width: 60%;
+  }
+
+  .filters form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .single-filter {
+    width: 45%;
+  }
+
+  .featured-items,
+  .shop-items-filtered {
+    justify-content: space-around;
+  }
+
+  .shop-item {
+    width: 45%;
+  }
+
+  .item-name {
+    padding: var(--mainPadding) 10%;
+  }
+
+  .item-path {
+    font-size: 0.75em;
+  }
+
+  .desc {
+    padding: var(--mainPadding) 10%;
+  }
+
+  .comment-img-cont {
+    width: 10%;
+  }
+
+  .cart-item {
+    padding: var(--mainPadding) 20%;
+  }
+
+  /* checkout page */
+
+  .item-list-short {
+    width: 60%;
+  }
+
+  .your-order {
+    margin: var(--mainPadding) 10%;
+  }
+
+
+  .order-user-place {
+    width: 80%;
+  }
+
+
+  .checkout-page .continue-cart {
+    margin-right: calc(10% - var(--mainPadding));
+  }
+
+  .products-bought .continue-cart {
+    margin-right: 0;
+  }
+
+
+
+}

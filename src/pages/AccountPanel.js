@@ -104,10 +104,10 @@ const AccountPanel = () => {
       <div className="info-account-panel">
         <ul>
           <li>
-            <button onClick={() => showInfoF(showInfo, 'showInfo')}>See info</button>
+            <button className={showInfo ? `active` : null} onClick={() => showInfoF(showInfo, 'showInfo')}>See info</button>
           </li>
           <li>
-            <button onClick={() => showInfoF(showHistory, 'showHistory')}>Shop history</button>
+            <button className={showHistory ? `active` : null} onClick={() => showInfoF(showHistory, 'showHistory')}>Shop history</button>
           </li>
           <li>
             <button onClick={handleLogout}>Logout</button>
