@@ -87,8 +87,10 @@ const Checkout = () => {
       let letIdFromAllUsers = userList.findIndex(item => item.userId === loggedUser.userId)
       let userFromAllUsers = userList.find(item => item.userId === loggedUser.userId)
 
-      userFromAllUsers.shopHistory = [...userFromAllUsers.shopHistory, cart]
 
+
+      userFromAllUsers.shopHistory = [...userFromAllUsers.shopHistory, cart]
+      // userFromAllUsers.dateOfPurchase
       let array = userList
       array.splice(letIdFromAllUsers, 1, userFromAllUsers)
 
