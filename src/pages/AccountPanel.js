@@ -13,7 +13,6 @@ const AccountPanel = () => {
   const [showHistory, setShowHistory] = React.useState(false)
 
   const { shopHistory, dateOfPurchase } = loggedUser
-  console.log(showHistory)
   const [triggerLoader, setTriggerLoader] = React.useState(false)
 
   const handleLogout = () => {
