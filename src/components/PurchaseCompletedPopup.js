@@ -15,7 +15,7 @@ class PurchaseCompletedPopul extends React.Component {
     }
 
 
-    console.log(svgLength)
+    // console.log(svgLength)
     svgOk.forEach((item, id) => item.style.strokeDasharray = svgLength[id])
     svgOk.forEach((item, id) => item.style.strokeDashoffset = svgLength[id])
     svgOk.forEach((item, id) => item.style.animation = `svgAnimate 2s ease both .5s`)

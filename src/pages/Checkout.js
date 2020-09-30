@@ -78,7 +78,7 @@ const Checkout = () => {
     typeof loggedUser.place[0].city !== 'undefined' && setCity(loggedUser.place[0].city)
     typeof loggedUser.place[0].address !== 'undefined' && setAddress(loggedUser.place[0].address)
 
-    console.log(loggedUser)
+    // console.log(loggedUser)
   }
 
   const handleBuyProducts = (e) => {
@@ -100,12 +100,14 @@ const Checkout = () => {
       setShowFinishPopup(true)
 
       setCart([])
+      localStorage.setItem('cart', JSON.stringify([]))
+
       setUserName('')
       setCountry('')
       setCity('')
       setAddress('')
 
-      console.log('items bought')
+      // console.log('items bought')
     }
   }
 
