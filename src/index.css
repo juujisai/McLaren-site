@@ -2366,3 +2366,80 @@ input[type=range]::-ms-fill-upper {
 
 
 /* end of checkout page */
+
+
+/* account page */
+
+
+
+.account-panel {
+  min-height: 100vh;
+}
+
+.info-account-panel {
+  margin: var(--mainPadding) 0;
+}
+
+
+.info-account-panel button {
+  width: 100%;
+  line-height: 2;
+  margin: calc(var(--mainPadding) / 4) 0;
+  background-color: #fff;
+  outline: none;
+  border: var(--borderWidth) solid #000;
+  border-left: none;
+  border-right: none;
+  font-family: var(--fontHeads);
+}
+
+
+
+.shop-history {
+  width: 90%;
+  margin: var(--mainPadding) auto;
+}
+
+.shop-history h4 {
+  margin-bottom: 5px;
+  font-family: var(--fontHeads);
+}
+
+.shop-history-time {
+  margin-bottom: 5px;
+
+  font-size: .8em;
+}
+
+.span-date {
+  margin-right: 2px;
+}
+
+
+.account-panel-data h2 {
+  padding: var(--mainPadding);
+  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+  margin-bottom: var(--mainPadding);
+}
+
+.account-panel-data p {
+  padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-panel-data p span {
+  font-weight: 700;
+}
+
+.account-panel-data p img {
+  width: 20%;
+}
+
+.no-shop-history {
+  padding: var(--mainPadding)
+}
+
+/* end of account page */

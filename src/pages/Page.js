@@ -24,8 +24,7 @@ const Page = () => {
   const { loggedUser } = React.useContext(LoggedUserContext)
 
 
-  const loggedUserFromLocalStorage = JSON.parse(localStorage.getItem('cart'))
-  console.log(loggedUserFromLocalStorage)
+  // const loggedUserFromLocalStorage = JSON.parse(localStorage.getItem('cart'))
   const pageFilesList = [<Home />, <Drivers />, <Schedule />, <Shop />, <Game />]
 
   const pages = navData.map((item, id) => (
