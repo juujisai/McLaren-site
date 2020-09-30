@@ -37,11 +37,13 @@ class NextRace extends React.Component {
     const schedule = this.state.schedule
 
     const checkSchedule1 = schedule.filter(race => race.month.includes(this.state.todaysDate.month))
-
     if (checkSchedule1.length !== 0) {
       checkSchedule1[checkSchedule1.length - 1].month.includes('/') && checkSchedule1.pop()
 
       let nextRace = checkSchedule1.filter(race => Number(race.dayEnd) >= this.state.todaysDate.day)
+      console.log(nextRace)
+      if (nextRace.length === 0) { nextRace = schedule.filter(item => item.id === checkSchedule1[checkSchedule1.length - 1].id + 1) }
+      console.log(nextRace)
 
       let daysDelta = nextRace.map(one => Math.abs(one.dayEnd - this.state.todaysDate.day))
 

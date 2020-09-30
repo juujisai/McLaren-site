@@ -16,10 +16,10 @@ const DriverPage = () => {
 
   const { driversInfo, loading } = React.useContext(DriverContext)
 
-  console.log(driversInfo)
+  // console.log(driversInfo)
 
   const driver = driversInfo.find(one => `${one.name}${one.secondName}` === name)
-  console.log(driver)
+  // console.log(driver)
 
   if (loading || typeof driver === 'undefined') {
     return <Loader />
