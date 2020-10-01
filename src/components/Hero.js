@@ -4,6 +4,7 @@ import navData from '../data/navData'
 import Title from './Title'
 import video from '../media/f1.webm'
 import videoCont from '../images/home1cont.png'
+import videoContVert from '../images/home1ContVert2.png'
 
 const Hero = () => {
 
@@ -12,7 +13,8 @@ const Hero = () => {
       return (
         <>
           <video src={video} muted autoPlay loop></video>
-          <img src={videoCont} alt="cont"></img>
+          <img className='first' src={window.innerHeight <= window.innerWidth ? videoContVert : videoCont} alt="cont"></img>
+          {/* <img src={videoCont} alt="cont"></img> */}
 
         </>
       )
@@ -27,7 +29,7 @@ const Hero = () => {
       render={() => (
         <>
           {firstPath(path)}
-          <img src={path.img} alt={path.name}></img>
+          <img className={id === 0 ? 'first' : 'other'} src={path.img} alt={path.name}></img>
           <Title text={path.name} />
         </>
       )}

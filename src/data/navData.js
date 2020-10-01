@@ -1,4 +1,7 @@
+
+
 import img1 from '../images/home12.jpg'
+import img11 from '../images/home1Vert2.png'
 import img2 from '../images/drivers.jpg'
 import img3 from '../images/schedule.jpg'
 import img4 from '../images/shop.jpg'
@@ -6,14 +9,13 @@ import img5 from '../images/game.jpg'
 
 
 
-
-
+const image1 = window.innerHeight <= window.innerWidth ? img11 : img1
 
 export default [
   {
     path: '/',
     name: 'home',
-    img: img1
+    img: image1
   },
   {
     path: '/drivers',
