@@ -45,7 +45,16 @@ const Home = () => {
 
   //end of last result
 
+  React.useEffect(() => {
+    const galleryItems = [...document.querySelectorAll('.gallery-picture')]
 
+    if (galleryItems.length !== 0 && window.innerWidth >= 1024) {
+      galleryItems.forEach((item, id) => {
+        item.style.transform = `rotateY(${id * 45}deg) translateZ(${item.clientWidth * 2}px)`
+      })
+    }
+
+  })
 
   if (loading || loading2) {
     return <Loader />
@@ -60,7 +69,9 @@ const Home = () => {
       </section>
       <section className="section-gallery">
         <Title text='Gallery' />
-        {galleryList}
+        <div className="gallery-desktop">
+          {galleryList}
+        </div>
       </section>
       <section className='section-article'>
         {articlesList}

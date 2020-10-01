@@ -41,7 +41,7 @@ const Hero = () => {
       <Switch>
         {paths}
         <Route
-          render={() => (<img src={navData[0].img} alt={navData[0].name}></img>)}
+          render={() => (<img src={navData[3].img} alt={navData[0].name}></img>)}
         />
       </Switch>
     </>

@@ -25,8 +25,12 @@ function App() {
       <ScrollToTop />
       <ArrowToTop />
       <Header />
-      <Logo />
-      {loggedUser && <div className="user-logged"><div className="avatar"><img src={loggedUser.img === '' ? defaultAvatar : loggedUser.img} alt="" /></div><h1>Hello {loggedUser.userName}</h1></div>}
+      <div className="desktop-flex">
+
+        <Logo />
+        {loggedUser && <div className="user-logged"><div className="avatar"><img src={loggedUser.img === '' ? defaultAvatar : loggedUser.img} alt="" /></div><h1>Hello {loggedUser.userName}</h1></div>}
+      </div>
+
       <Page />
       <Footer />
     </Router>
