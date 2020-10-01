@@ -2712,3 +2712,183 @@ input[type=range]::-ms-fill-upper {
 
 
 }
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+@media (orientation: landscape) {
+  header img {
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+  .navi {
+    left: 40%;
+    height: 100%;
+    width: 60%;
+    border-left: var(--borderWidth) solid var(--mainOrange)
+  }
+
+  .navi a {
+    line-height: 1;
+    height: calc(100vh / 8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 40%;
+    height: 40vh;
+  }
+
+  .par {
+    display: flex;
+    align-items: center;
+  }
+
+  .single-article-par,
+  .single-article-desc {
+    width: 80%;
+  }
+
+  .single-article .img-cont {
+    width: 60%;
+  }
+
+  .section-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .section-gallery .title {
+    width: 100%;
+  }
+
+  .gallery-picture {
+    width: 50%;
+    height: 50vh;
+
+
+  }
+
+  .zoom-gallery-pic {
+    height: 70vh;
+  }
+
+  .result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .driver-result {
+    width: 45%;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-between;
+  }
+
+  .driver-short {
+    padding: 10vh 20%;
+  }
+
+  .image-gif {
+    height: 60vh;
+
+  }
+
+  .about-driver {
+    margin: var(--mainPadding) 20%;
+  }
+
+  .driver-socials {
+    margin: 0 20%;
+    height: 60vh;
+  }
+
+  .info-page p {
+    margin: var(--mainPadding) 10%;
+  }
+
+  .photos {
+    width: 40%;
+    margin-left: 10%
+  }
+
+
+  .single-race {
+    width: 45%;
+    margin: 0 auto var(--mainPadding);
+  }
+
+  .game {
+    height: 100vh;
+
+  }
+
+  .game-window {
+    background-size: cover;
+  }
+
+  .info-game {
+    width: 100%;
+  }
+
+  .clutch {
+    width: 15vw;
+    height: 15vw;
+
+  }
+
+  .game-lights {
+    width: 50%;
+  }
+
+  .login-page {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .shop-item {
+    width: 40%;
+  }
+
+  .featured-items,
+  .shop-items-filtered {
+
+    justify-content: space-around;
+  }
+
+  .item-cont {
+
+    height: 60vh;
+  }
+
+  .comment-img-cont {
+    width: 10%;
+  }
+
+  .cart-item {
+    padding: var(--mainPadding) 20%;
+  }
+
+  .products-bought {
+    z-index: 10;
+  }
+}
+
+
+@media (orientation: landscape) and (min-width: 700px) {
+  .shop-item {
+    width: 30%;
+  }
+
+}
