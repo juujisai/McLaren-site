@@ -3107,6 +3107,7 @@ input[type=range]::-ms-fill-upper {
     transform-style: preserve-3d;
     display: flex;
     align-items: center;
+    box-shadow: 15px 10px 11px #111;
   }
 
 
@@ -3120,6 +3121,254 @@ input[type=range]::-ms-fill-upper {
     object-fit: cover;
     transform: none;
 
+  }
+
+
+  .section-article {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .article {
+    width: 30%;
+    margin-top: 0;
+    margin-bottom: calc(var(--mainPadding) * 4);
+  }
+
+
+
+  .btn-read-more:hover {
+    color: var(--mainBlue)
+  }
+
+
+
+  .single-article-title {
+    padding-left: 20%;
+  }
+
+  .single-article .img-cont {
+    margin: calc(var(--mainPadding) * 3);
+    width: 40%;
+  }
+
+  .single-article-desc,
+  .single-article-par,
+  .single-article .link-back {
+    width: 60%;
+  }
+
+  .btn-link {
+    position: relative;
+    transition: var(--mainTransition);
+    overflow: hidden;
+    outline: none;
+  }
+
+  .btn-link::before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0%;
+    width: 100%;
+    height: 1000%;
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+    background-color: var(--mainOrange);
+    z-index: -1;
+    transition: var(--mainTransition);
+
+  }
+
+  .btn-link:hover {
+    color: #fff;
+  }
+
+  .btn-link:hover:before {
+    transform: rotate(90deg);
+
+  }
+
+  .social {
+    min-height: 20vh;
+  }
+
+  .socials {
+    width: 20%;
+    display: flex;
+    /* justify-content: center; */
+  }
+
+  .socials a svg {
+    height: 100%;
+    transform: rotate(0deg);
+    transition: 1s
+  }
+
+  .socials a:hover svg {
+    transform: rotate(360deg);
+    font-size: 1.2em;
+    color: var(--mainBlue)
+  }
+
+  .drivers-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .driver-short {
+    padding: 0;
+    padding-left: 10%;
+    /* margin-right: 5%; */
+    /* padding-right: 10%; */
+    box-sizing: content-box;
+    width: calc(40% - 2px);
+  }
+
+  .driver-short div {
+    height: 60vh;
+  }
+
+  .driver-short div:nth-of-type(2) {
+    height: 30vh;
+  }
+
+  .driver-short .image-img1:nth-of-type(2) {
+    transform: rotateY(180deg)
+  }
+
+
+  .driver-short div img {
+    object-fit: cover;
+  }
+
+  .driver-short:nth-of-type(2) {
+    padding-left: 0%;
+    padding-right: 10%;
+    /* margin-left: 5%; */
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+
+  .btn-goto-driver {
+    padding: 10px 0;
+  }
+
+
+
+  .img-cont-driver {
+    height: 30vh;
+  }
+
+  .about-driver {
+    margin: calc(var(--mainPadding) * 2) 30%;
+  }
+
+
+  .driver-socials {
+    height: 25vh;
+    margin: calc(var(--mainPadding) * 2) 30%;
+
+  }
+
+  .driver-socials a svg {
+    transform: rotate(0);
+    transition: 1s;
+  }
+
+
+  .driver-socials a:hover svg {
+    transform: rotate(360deg);
+    /* font-size: 1.2em; */
+    color: var(--mainBlue)
+  }
+
+
+  .text-cont-flex {
+    margin: var(--mainPadding) 10%;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+  }
+
+  .info-page p {
+    margin: 0;
+    align-self: center;
+  }
+
+  .text-cont-flex .photos {
+    height: 40vh;
+    margin-left: calc(var(--mainPadding) * 2);
+    margin-right: 0;
+    width: auto;
+  }
+
+  .text-cont-flex .photos img {
+    object-fit: cover;
+  }
+
+  .schedule {
+    margin: 0 10%;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .next-race {
+    margin-left: 50%;
+    /* margin-right: 30%; */
+    width: 50%;
+    height: auto;
+  }
+
+
+
+  .single-race {
+    width: 30%;
+    margin: 0;
+    margin-bottom: var(--mainPadding);
+    /* height: 30vh */
+  }
+
+  .race-cont {
+    height: 30vh;
+  }
+
+
+
+  .login-page {
+    margin: 20vh auto;
+  }
+
+
+  .btn-login {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-login:hover {
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .btn-login:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: var(--mainBlue);
+    transition: var(--mainTransition);
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  .btn-login:hover:after {
+    transform: translate(-50%, -50%) scale(1);
   }
 
 }

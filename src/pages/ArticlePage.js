@@ -42,9 +42,10 @@ const ArticlePage = () => {
         </div>
         <h4 className='single-article-desc'>{description}</h4>
         {paragraphs}
+        <div className='link-back'>
 
-        <Link to='/' className={'btn-link'}>Back to article list</Link>
-
+          <Link to='/' className={'btn-link'}>Back to article list</Link>
+        </div>
 
       </article>
 
