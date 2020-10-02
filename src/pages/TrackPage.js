@@ -35,7 +35,7 @@ const TrackPage = () => {
 
     transformLeft = e.pageX
     transformTop = e.pageY - trackImageOffsetY
-    transformScale = 3
+    window.innerWidth >= 1024 ? transformScale = 1 : transformScale = 3
 
     setStyle({
       transformOrigin: `${transformLeft}px ${transformTop}px`,
@@ -94,7 +94,7 @@ const TrackPage = () => {
 
 
   return (
-    <div>
+    <div className='track-page'>
       <div className="track-title">
         <h3>{nameOfEvent}</h3>
         <h4>{country}</h4>
@@ -102,7 +102,7 @@ const TrackPage = () => {
 
 
       <div className="track-image">
-        <div className="back-text">click to make image bigger</div>
+        {window.innerWidth <= 1024 && <div className="back-text">click to make image bigger</div>}
         <img className='full-img' style={style} src={circuitColor} alt={country} onClick={handleClick} />
         <a href={linkToF1Page} target='_blank' rel='noopener noreferrer'>Go to official F1 page</a>
       </div>
