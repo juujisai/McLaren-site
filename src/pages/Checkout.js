@@ -2,6 +2,7 @@ import React from 'react';
 import { CartContext } from '../context/CartContext'
 import { LoggedUserContext } from '../context/LoggedUserContext'
 import { AllUsersContext } from '../context/AllUsersContext'
+import AlertBox from '../components/AllertBox'
 
 
 import Loader from '../components/Loader'
@@ -22,6 +23,10 @@ const Checkout = () => {
   const [check, setChecked] = React.useState(false)
 
   const [showFinishPopup, setShowFinishPopup] = React.useState(false)
+
+  const [showAlert, setShowAlert] = React.useState(false)
+
+
 
   const cartList = cart.map((item, id) => (
     <CartItemsShort item={item} key={id} />
@@ -64,8 +69,12 @@ const Checkout = () => {
 
       console.log(array)
       setUserList(array)
+      setShowAlert(true)
       localStorage.setItem('userList', JSON.stringify(array))
       setLoggedUser(userFromAllUsers)
+
+      setTimeout(() => { setShowAlert(false) }, 1500)
+
     }
 
 
@@ -181,6 +190,7 @@ const Checkout = () => {
 
       <div className="continue-cart"><Link to='/shop/cart'>Go back to cart</Link> </div>
 
+      {showAlert && <div className="result2"><AlertBox type='success' message='Data saved ...' /></div>}
 
       {showFinishPopup && <div className='white-bg'></div>}
 
