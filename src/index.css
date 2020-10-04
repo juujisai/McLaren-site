@@ -2902,6 +2902,10 @@ input[type=range]::-ms-fill-upper {
 
 
 @media (orientation: landscape) and (min-width: 1024px) {
+  body {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
   header {
     height: 100vh;
@@ -3421,6 +3425,7 @@ input[type=range]::-ms-fill-upper {
     letter-spacing: 2px;
     font-weight: 700;
     font-family: var(--fontMcLaren);
+    pointer-events: none;
   }
 
   .item-img:before {
@@ -3434,6 +3439,7 @@ input[type=range]::-ms-fill-upper {
     background-color: rgba(0, 0, 0, .7);
     opacity: 0;
     transition: var(--mainTransition);
+    pointer-events: none;
 
   }
 
@@ -3446,6 +3452,54 @@ input[type=range]::-ms-fill-upper {
     width: 20%;
   }
 
+
+  .item-page-cont {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .item-cont {
+    width: 60%;
+    height: 30vh;
+    margin-left: 10%;
+  }
+
+  .item-comment {
+    margin: var(--mainPadding) 10%;
+  }
+
+
+  .item-info button {
+    font-size: 1.1em;
+    transition: 1s;
+    cursor: pointer;
+  }
+
+  .item-info button:hover {
+    padding-left: 10%;
+    color: var(--mainBlue);
+  }
+
+
+  .item-info button::before {
+    transition: 1s;
+
+  }
+
+  .item-info button:hover::before {
+    top: 0%;
+    background-color: var(--mainBlue);
+
+  }
+
+  .item-info button::after {
+    transition: 1s;
+  }
+
+  .item-info button:hover::after {
+    left: 0%;
+    background-color: var(--mainBlue);
+  }
 
   .track-page {
     display: flex;
