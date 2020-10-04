@@ -13,7 +13,6 @@ const ShopItem = ({ data }) => {
 
   const handleClick = () => {
     setShowAlert(true)
-    console.log(cart, data)
     if (cart.filter(item => item.id === data.id).length > 0) {
 
       // console.log('already in cart')
@@ -24,7 +23,6 @@ const ShopItem = ({ data }) => {
 
       let array = [...cart]
       array.splice(idIfExist, 1, itemIfExist)
-      console.log(array)
 
       setCart(array)
       localStorage.setItem('cart', JSON.stringify(array))

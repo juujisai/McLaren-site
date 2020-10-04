@@ -1,10 +1,8 @@
 import React from 'react';
-// import pseudoDatabase from '../data/pseudoDatabase'
 import AlertBox from '../components/AllertBox'
 import { AllUsersContext } from '../context/AllUsersContext'
 import { LoggedUserContext } from '../context/LoggedUserContext'
 import Loader from '../components/Loader'
-// import { Route, Redirect } from 'react-router-dom'
 
 const Login = () => {
 
@@ -15,14 +13,7 @@ const Login = () => {
   const [formPassword, setFormPassword] = React.useState('')
 
   const [alertShow, setAlertShow] = React.useState(false)
-  // const [redirect, setRedirect] = React.useState(false)
-  // const [loginResult, setLoginResult] = React.useState({
-  //   logged: false,
-  //   username: '',
-  //   userId: ''
-  // })
 
-  // const { userList, loading } = React.useContext(AllUsersContext)
   const { loading } = React.useContext(AllUsersContext)
 
 
@@ -42,7 +33,6 @@ const Login = () => {
 
 
   const handleChange = (e) => {
-    // console.log(e.target.value, e.target.name)
 
     e.target.name === "formUsername" ? setFormUsername(e.target.value) : setFormPassword(e.target.value)
 
@@ -54,36 +44,15 @@ const Login = () => {
     const userId = validate(formUsername, formPassword)
 
     if (userId) {
-      setTimeout(() => {
-        localStorage.setItem('user', JSON.stringify(userId))
-        setLogin(true)
-        setAlertShow(true)
-        // setLoginResult({
-        //   logged: true,
-        //   username: formUsername,
-        //   userId: userId
-        // })
-
-        setUser(userId)
-
-
-      }, 1000)
-
-      setTimeout(() => {
-        setAlertShow(false)
-
-      }, 5000)
-
+      localStorage.setItem('user', JSON.stringify(userId))
+      setLogin(true)
+      setUser(userId)
 
     } else {
+      setLogin(false)
+
       setTimeout(() => {
-        setLogin(false)
         setAlertShow(true)
-        // setLoginResult({
-        //   logged: true,
-        //   username: 'a',
-        //   userId: ''
-        // })
       }, 1000)
 
       setTimeout(() => {

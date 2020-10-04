@@ -7,7 +7,7 @@ class PurchaseCompletedPopul extends React.Component {
 
   componentDidMount() {
     const svgOk = [document.querySelector('.ok-sign svg path'), document.querySelector('.ok-sign svg circle')]
-    console.log(svgOk)
+    // console.log(svgOk)
     let svgLength = []
 
     for (let i = 0; i < svgOk.length; i++) {

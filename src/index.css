@@ -3589,6 +3589,12 @@ input[type=range]::-ms-fill-upper {
     width: 100%;
   }
 
+
+  .cart .total,
+  .cart .continue-cart {
+    padding-right: 15%;
+  }
+
   .empty-cart {
     display: flex;
     align-items: center;
