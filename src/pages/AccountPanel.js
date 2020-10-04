@@ -60,7 +60,8 @@ const AccountPanel = () => {
   const showHistoryCont = (
     <div>
       {shopHistory.reverse().map((history, id) => {
-        const time = new Date(dateOfPurchase.reverse()[id])
+        let timeReversed = dateOfPurchase.reverse()
+        const time = new Date(timeReversed[id])
         return (
           <div className="shop-history" key={id}>
             <h4>Date of purchase:</h4>
