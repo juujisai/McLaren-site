@@ -12,8 +12,21 @@ const AccountPanel = () => {
   const [showInfo, setShowInfo] = React.useState(false)
   const [showHistory, setShowHistory] = React.useState(false)
 
-  const { shopHistory, dateOfPurchase } = loggedUser
+  const { shopHistory } = loggedUser
   const [triggerLoader, setTriggerLoader] = React.useState(false)
+
+
+  const sortFunction = (a, b) => {
+    let x = a[1]
+    let y = b[1]
+    if (x < y) return 1
+    if (x > y) return -1
+    if (x === y) return 0
+  }
+
+  const reversedShopHistory = shopHistory.sort(sortFunction)
+  // const reversedDateOfPurchase = dateOfPurchase.reverse()
+
 
   const handleLogout = () => {
 
@@ -59,9 +72,8 @@ const AccountPanel = () => {
 
   const showHistoryCont = (
     <div>
-      {shopHistory.reverse().map((history, id) => {
-        let timeReversed = dateOfPurchase.reverse()
-        const time = new Date(timeReversed[id])
+      {reversedShopHistory.map((history, id) => {
+        const time = new Date(reversedShopHistory[id][1])
         return (
           <div className="shop-history" key={id}>
             <h4>Date of purchase:</h4>
@@ -87,7 +99,7 @@ const AccountPanel = () => {
                 </tr>
 
 
-                {history.map((item, key) => (
+                {history[0].map((item, key) => (
                   <CartItemsShort item={item} key={key} />
                 ))}
               </tbody>

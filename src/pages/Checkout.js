@@ -58,7 +58,7 @@ const Checkout = () => {
       let letIdFromAllUsers = userList.findIndex(item => item.userId === loggedUser.userId)
       let userFromAllUsers = userList.find(item => item.userId === loggedUser.userId)
 
-      console.log(letIdFromAllUsers, userFromAllUsers, loggedUser)
+      // console.log(letIdFromAllUsers, userFromAllUsers, loggedUser)
       userFromAllUsers.userFullName = userName
       userFromAllUsers.place[0].country = country
       userFromAllUsers.place[0].city = city
@@ -67,7 +67,7 @@ const Checkout = () => {
       let array = userList
       array.splice(letIdFromAllUsers, 1, userFromAllUsers)
 
-      console.log(array)
+      // console.log(array)
       setUserList(array)
       setShowAlert(true)
       localStorage.setItem('userList', JSON.stringify(array))
@@ -97,8 +97,8 @@ const Checkout = () => {
       let userFromAllUsers = userList.find(item => item.userId === loggedUser.userId)
 
       let date = new Date().getTime()
-      userFromAllUsers.shopHistory = [...userFromAllUsers.shopHistory, cart]
-      userFromAllUsers.dateOfPurchase = [...userFromAllUsers.dateOfPurchase, date]
+      userFromAllUsers.shopHistory = [...userFromAllUsers.shopHistory, [cart, date]]
+      // userFromAllUsers.dateOfPurchase = [...userFromAllUsers.dateOfPurchase, date]
       let array = userList
       array.splice(letIdFromAllUsers, 1, userFromAllUsers)
 
