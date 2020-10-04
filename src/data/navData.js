@@ -1,7 +1,7 @@
 
 
 import img1 from '../images/home12.jpg'
-import img11 from '../images/home1Vert2.png'
+import img11 from '../images/home1Vert.png'
 import img2 from '../images/drivers.jpg'
 import img3 from '../images/schedule.jpg'
 import img4 from '../images/shop.jpg'

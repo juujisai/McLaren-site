@@ -4,7 +4,7 @@ import navData from '../data/navData'
 import Title from './Title'
 import video from '../media/f1.webm'
 import videoCont from '../images/home1cont.png'
-import videoContVert from '../images/home1ContVert2.png'
+import videoContVert from '../images/home1contVert.png'
 
 const Hero = () => {
 
