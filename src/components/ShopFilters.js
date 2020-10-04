@@ -96,12 +96,15 @@ class ShopFilters extends React.Component {
 
       dataArray = [...new Set(dataArray)]
 
-      dataArray.sort(function (a, b) {
+
+      const compare = (a, b) => {
+
         if (a.category > b.category) return -1
         if (a.category < b.category) return 1
         if (a.category === b.category) return 0
-      })
+      }
 
+      dataArray.sort(compare)
 
       this.settingData(dataArray)
       this.setState({ newData: dataArray })
