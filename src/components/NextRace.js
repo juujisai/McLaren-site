@@ -28,7 +28,9 @@ class NextRace extends React.Component {
       hours: 0,
       minutes: 0,
       seconds: 0,
-    }
+    },
+
+    seasonEnd: false
 
   }
 
@@ -53,13 +55,15 @@ class NextRace extends React.Component {
 
       if (typeof nextRace == 'undefined') {
         this.setState({
-          nextRace: schedule[schedule.length - 1]
+          nextRace: schedule[schedule.length - 1],
+          seasonEnd: true
         })
       }
 
       if (typeof nextRace !== 'undefined') {
         this.setState({
-          nextRace
+          nextRace,
+          seasonEnd: false
         })
       }
     }
@@ -104,13 +108,21 @@ class NextRace extends React.Component {
 
     let daysLeft = hour >= hourOfRace ? timeDelta.getDate() - 1 : timeDelta.getDate()
 
-    const timeToNext = {
+    let timeToNext = {
       days: daysLeft,
       hours: timeDelta.getHours(),
       minutes: timeDelta.getMinutes(),
       seconds: timeDelta.getSeconds(),
     }
 
+    if (this.state.seasonEnd) {
+      timeToNext = {
+        days: 0,
+        hours: 1,
+        minutes: 0,
+        seconds: 0
+      }
+    }
 
     this.setState({
       timeToNext

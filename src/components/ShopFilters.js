@@ -20,7 +20,6 @@ class ShopFilters extends React.Component {
 
 
   handleChange = (e, valueToPush = '') => {
-    console.log(':)')
     let name = e.target.name
     let type = e.target.type
 
@@ -61,37 +60,33 @@ class ShopFilters extends React.Component {
       let colArray = []
       // main filter
 
-      // if (dataArray.length === 0) {
-      //   this.state.category.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
-      // } else {
-      //   this.state.category.forEach(item => dataArray = [...dataArray.filter(item2 => item2.category === item)])
-      // }
-
-      // if (dataArray.length === 0) {
-      //   this.state.subCategory.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.subcategory === item)])
-      // } else {
-      //   this.state.subCategory.forEach(item => dataArray = [...fullDataNewArray.filter(item2 => item2.subcategory === item)])
-      // }
-
-      // if (dataArray.length === 0) {
-      //   this.state.color.forEach(item => dataArray = [...dataArray, ...fullDataNewArray.filter(item2 => item2.color.includes(item))])
-      // } else {
-      //   this.state.color.forEach(item => dataArray = [...dataArray, ...dataArray.filter(item2 => item2.color.includes(item))])
-      // }
 
       this.state.category.forEach(item => catArray = [...catArray, ...fullDataNewArray.filter(item2 => item2.category === item)])
       catArray.length === 0 ? dataArray = fullDataNewArray : dataArray = catArray
 
-      this.state.subCategory.forEach(item => subCatArray = [...subCatArray, ...dataArray.filter(item2 => item2.subcategory === item)])
 
-      subCatArray.length === 0 ? dataArray = [...dataArray] : dataArray = subCatArray
+      if (this.state.subCategory.length !== 0) {
+        this.state.subCategory.forEach(item => subCatArray = [...subCatArray, ...dataArray.filter(item2 => item2.subcategory === item)])
+        // subCatArray.length === 0 ? dataArray = [...dataArray] : dataArray = subCatArray
+        dataArray = subCatArray
+      }
 
-      this.state.color.forEach(item => colArray = [...colArray, ...dataArray.filter(item2 => item2.color.includes(item))])
 
-      colArray.length === 0 ? dataArray = [...dataArray] : dataArray = colArray
+      if (this.state.color.length !== 0) {
+        this.state.color.forEach(item => colArray = [...colArray, ...dataArray.filter(item2 => item2.color.includes(item))])
+        colArray.length === 0 ? dataArray = [...dataArray] : dataArray = colArray
+      }
 
-      dataArray.length === 0 ? dataArray = fullDataNewArray : dataArray = [...dataArray]
 
+
+      // dataArray.length === 0 ? dataArray = fullDataNewArray : dataArray = [...dataArray]
+      console.log(this.state.category, this.state.subCategory, this.state.color)
+      console.log(dataArray)
+
+      if (this.state.category.lenth === 0 && this.state.subCategory.length === 0 && this.state.color.length === 0) {
+
+        dataArray = fullDataNewArray
+      }
       dataArray = dataArray.filter(item => item.price <= this.state.price)
 
       dataArray = [...new Set(dataArray)]
