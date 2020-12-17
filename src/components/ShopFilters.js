@@ -80,8 +80,7 @@ class ShopFilters extends React.Component {
 
 
       // dataArray.length === 0 ? dataArray = fullDataNewArray : dataArray = [...dataArray]
-      console.log(this.state.category, this.state.subCategory, this.state.color)
-      console.log(dataArray)
+
 
       if (this.state.category.lenth === 0 && this.state.subCategory.length === 0 && this.state.color.length === 0) {
 
